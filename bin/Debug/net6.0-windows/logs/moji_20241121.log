@@ -1,0 +1,101 @@
+[01:16:41 INF] 应用程序启动
+[01:16:57 INF] 发送请��
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'Content-Type: application/json' \
+  --data-raw '{"text":"\u63A5\u7D9A"}'
+
+[01:16:57 INF] 收到响应
+状态码: "Forbidden"
+响应内容: {"error":"unauthorized"}
+[01:16:57 ERR] 请求失败
+状态码: "Forbidden"
+响应内容: {"error":"unauthorized"}
+[01:29:11 INF] 应用程序关闭
+[01:29:19 INF] 应用程序启动
+[01:29:28 ERR] 发送请求时发生错误
+System.FormatException: The format of value 'application/json;charset=UTF-8' is invalid.
+   at System.Net.Http.Headers.MediaTypeHeaderValue.CheckMediaTypeFormat(String mediaType, String parameterName)
+   at System.Net.Http.Headers.MediaTypeHeaderValue..ctor(String mediaType)
+   at System.Net.Http.StringContent..ctor(String content, Encoding encoding, String mediaType)
+   at moji.MainWindow.SendHttpRequest(String clipboardText) in C:\code\moji\MainWindow.xaml.cs:line 282
+[01:30:01 ERR] 发送请求时发生错误
+System.FormatException: The format of value 'application/json;charset=UTF-8' is invalid.
+   at System.Net.Http.Headers.MediaTypeHeaderValue.CheckMediaTypeFormat(String mediaType, String parameterName)
+   at System.Net.Http.Headers.MediaTypeHeaderValue..ctor(String mediaType)
+   at System.Net.Http.StringContent..ctor(String content, Encoding encoding, String mediaType)
+   at moji.MainWindow.SendHttpRequest(String clipboardText) in C:\code\moji\MainWindow.xaml.cs:line 282
+[01:30:48 INF] 应用程序关闭
+[01:30:55 INF] 应用程序启动
+[01:30:58 ERR] 发送请求时发生错误
+System.FormatException: The format of value ' application/json;charset=UTF-8' is invalid.
+   at System.Net.Http.Headers.MediaTypeHeaderValue.CheckMediaTypeFormat(String mediaType, String parameterName)
+   at System.Net.Http.Headers.MediaTypeHeaderValue..ctor(String mediaType)
+   at System.Net.Http.StringContent..ctor(String content, Encoding encoding, String mediaType)
+   at moji.MainWindow.SendHttpRequest(String clipboardText) in C:\code\moji\MainWindow.xaml.cs:line 282
+[01:32:00 ERR] 发送请求时发生错误
+System.FormatException: The format of value ' application/json;charset=UTF-8' is invalid.
+   at System.Net.Http.Headers.MediaTypeHeaderValue.CheckMediaTypeFormat(String mediaType, String parameterName)
+   at System.Net.Http.Headers.MediaTypeHeaderValue..ctor(String mediaType)
+   at System.Net.Http.StringContent..ctor(String content, Encoding encoding, String mediaType)
+   at moji.MainWindow.SendHttpRequest(String clipboardText) in C:\code\moji\MainWindow.xaml.cs:line 282
+[01:36:09 INF] 应用程序关闭
+[01:36:15 INF] 应用程序启动
+[01:36:21 ERR] 发送请求时发生错误
+System.FormatException: The format of value 'application/json;charset=UTF-8' is invalid.
+   at System.Net.Http.Headers.MediaTypeHeaderValue.CheckMediaTypeFormat(String mediaType, String parameterName)
+   at System.Net.Http.Headers.MediaTypeHeaderValue..ctor(String mediaType)
+   at System.Net.Http.StringContent..ctor(String content, Encoding encoding, String mediaType)
+   at moji.MainWindow.SendHttpRequest(String clipboardText) in C:\code\moji\MainWindow.xaml.cs:line 283
+[01:38:36 INF] 应用程序关闭
+[01:38:42 INF] 应用程序启动
+[01:38:48 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u63A5\u7D9A"}'
+[01:38:49 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198976648","targetType":102,"title":"接続 | せつぞく ⓪","excerpt":"[名·自他动·サ变] 连接；接连，连续；接续"},{"targetId":"grDNvXfCRe","targetType":102,"title":"そんなら | そんなら ③","excerpt":"[惯用] そんなら （接続） 「それなら」の転。➖那么，那就，那么就 「━こちらにも考えがある」 「━帰ろう」"},{"targetId":"WCfIMNwCCT","targetType":102,"title":"がてら(に) | がてら(に)","excerpt":"[助词] 《接続》 動作的な意味を持つ体言に付く。…を兼ねて。…のついでに。…ながら。 《源氏物語・行幸》 「三条の宮に、御とぶらひがてら渡り給(タマ)ふ」 《訳》 (源氏は大宮のいる)三条の宮に、ご機嫌うかがいを兼ねて(大宮の孫の玉鬘(タマカス゛ラ)の存在を知らせに)いらっしゃる。"},{"targetId":"0X6w3jVZP4","targetType":102,"title":"ぢゃ〔現代かな遣い〕じゃ | じゃげんだいかなずかいじゃ","excerpt":"[动] 《接続》 主に体言や、活用語の連体形に付く。活用形 〔断定〕…だ。…である。 《冥途の飛脚・浄瑠・近松》 「おやぢさまはいとしや、早う脱(ヌ)かしてくれよとて、狂乱になってぢゃ」 《訳》 おやじ様はかわいそうに、早く逃がしてくれといって、狂乱のようになっておいでだ。 《参考》 中世に「である」が変化してできた語。関東の「だ」に対立する形で関西で用いられ、現代でも関西以西の地方で用いられる。"},{"targetId":"pg5MC4aSTg","targetType":102,"title":"じゃあ（ぢゃあ） | じゃー（じゃあ）","excerpt":"[接续] ＝じゃ〔接続〕"}]}}}}
+[01:39:57 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u6226\u4E89"}'
+[01:39:58 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198977626","targetType":102,"title":"戦争 | せんそう ⓪","excerpt":"[名·サ变] 战争，战事；会战；打仗；如战争般的竞争、混乱等"},{"targetId":"RM0qTsNHy8","targetType":102,"title":"戦争中 | せんそうちゅう","excerpt":"[惯用] 战争中"},{"targetId":"220120w83250","targetType":102,"title":"戦争画 | せんそうが ⓪","excerpt":"[名] 戦争を主題にした絵画。ピカソの「ゲルニカ」に代表される反戦絵画，国策に協力し戦意高揚のために描かれた絵画，事実の記録としての歴史画など。"},{"targetId":"220120w83169","targetType":102,"title":"戦争論 | せんそうろん","excerpt":"[名] 原題 Vom Kriege プロイセンの将軍クラウゼビッツの著。三巻。著者没後の1832年刊。近代国家における戦争の本質を鋭く突いた古典的名著として評価が高い。"},{"targetId":"198977628","targetType":102,"title":"戦争状態 | せんそうじょうたい","excerpt":"[名·サ变] 战争状态"}]}}}}
+[01:42:41 INF] 应用程序关闭

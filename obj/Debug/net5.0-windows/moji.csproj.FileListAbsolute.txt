@@ -1,0 +1,5 @@
+C:\code\moji\obj\Debug\net5.0-windows\moji.csproj.AssemblyReference.cache
+C:\code\moji\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\code\moji\obj\Debug\net5.0-windows\App.g.cs
+C:\code\moji\obj\Debug\net5.0-windows\moji_MarkupCompile.cache
+C:\code\moji\obj\Debug\net5.0-windows\moji_MarkupCompile.lref
