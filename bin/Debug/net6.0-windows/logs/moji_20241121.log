@@ -280,3 +280,199 @@ curl 'https://api.mojidict.com/parse/functions/search-all' \
 状态码: "OK"
 响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198976648","targetType":102,"title":"接続 | せつぞく ⓪","excerpt":"[名·自他动·サ变] 连接；接连，连续；接续"},{"targetId":"grDNvXfCRe","targetType":102,"title":"そんなら | そんなら ③","excerpt":"[惯用] そんなら （接続） 「それなら」の転。➖那么，那就，那么就 「━こちらにも考えがある」 「━帰ろう」"},{"targetId":"WCfIMNwCCT","targetType":102,"title":"がてら(に) | がてら(に)","excerpt":"[助词] 《接続》 動作的な意味を持つ体言に付く。…を兼ねて。…のついでに。…ながら。 《源氏物語・行幸》 「三条の宮に、御とぶらひがてら渡り給(タマ)ふ」 《訳》 (源氏は大宮のいる)三条の宮に、ご機嫌うかがいを兼ねて(大宮の孫の玉鬘(タマカス゛ラ)の存在を知らせに)いらっしゃる。"},{"targetId":"0X6w3jVZP4","targetType":102,"title":"ぢゃ〔現代かな遣い〕じゃ | じゃげんだいかなずかいじゃ","excerpt":"[动] 《接続》 主に体言や、活用語の連体形に付く。活用形 〔断定〕…だ。…である。 《冥途の飛脚・浄瑠・近松》 「おやぢさまはいとしや、早う脱(ヌ)かしてくれよとて、狂乱になってぢゃ」 《訳》 おやじ様はかわいそうに、早く逃がしてくれといって、狂乱のようになっておいでだ。 《参考》 中世に「である」が変化してできた語。関東の「だ」に対立する形で関西で用いられ、現代でも関西以西の地方で用いられる。"},{"targetId":"pg5MC4aSTg","targetType":102,"title":"じゃあ（ぢゃあ） | じゃー（じゃあ）","excerpt":"[接续] ＝じゃ〔接続〕"}]}}}}
 [02:03:21 INF] 应用程序关闭
+[02:03:27 INF] 应用程序启动
+[02:03:35 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u5927\u5C0F"}'
+[02:03:35 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198982741","targetType":102,"title":"大小 | だいしょう ①","excerpt":"[名] 大小；大（的）与小（的）；（武士佩带的）大刀和小刀；大小鼓"},{"targetId":"apsYj4o9cs","targetType":102,"title":"大小 | おおさ","excerpt":"[名] 大きさ。＊東大寺諷誦文平安初期点「大小(オホサ)は雀の如し」"},{"targetId":"198963854","targetType":102,"title":"手頃 | てごろ ⓪","excerpt":"[形动] 适手，大小、轻重正合手；适合，适称，与能力或情况正好相合"},{"targetId":"198973180","targetType":102,"title":"吹き回し | ふきまわし ⓪","excerpt":"[名] （一时的）心情；风的强弱、大小、方向等情况"},{"targetId":"198944374","targetType":102,"title":"巨細 | こさい ⓪","excerpt":"[名] 大小，巨细；详细，仔细"}]}}}}
+[02:03:43 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u5927\u5C0F"}'
+[02:03:43 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198982741","targetType":102,"title":"大小 | だいしょう ①","excerpt":"[名] 大小；大（的）与小（的）；（武士佩带的）大刀和小刀；大小鼓"},{"targetId":"apsYj4o9cs","targetType":102,"title":"大小 | おおさ","excerpt":"[名] 大きさ。＊東大寺諷誦文平安初期点「大小(オホサ)は雀の如し」"},{"targetId":"198963854","targetType":102,"title":"手頃 | てごろ ⓪","excerpt":"[形动] 适手，大小、轻重正合手；适合，适称，与能力或情况正好相合"},{"targetId":"198973180","targetType":102,"title":"吹き回し | ふきまわし ⓪","excerpt":"[名] （一时的）心情；风的强弱、大小、方向等情况"},{"targetId":"198944374","targetType":102,"title":"巨細 | こさい ⓪","excerpt":"[名] 大小，巨细；详细，仔细"}]}}}}
+[02:04:01 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u5927\u5C0F"}'
+[02:04:01 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198982741","targetType":102,"title":"大小 | だいしょう ①","excerpt":"[名] 大小；大（的）与小（的）；（武士佩带的）大刀和小刀；大小鼓"},{"targetId":"apsYj4o9cs","targetType":102,"title":"大小 | おおさ","excerpt":"[名] 大きさ。＊東大寺諷誦文平安初期点「大小(オホサ)は雀の如し」"},{"targetId":"198963854","targetType":102,"title":"手頃 | てごろ ⓪","excerpt":"[形动] 适手，大小、轻重正合手；适合，适称，与能力或情况正好相合"},{"targetId":"198973180","targetType":102,"title":"吹き回し | ふきまわし ⓪","excerpt":"[名] （一时的）心情；风的强弱、大小、方向等情况"},{"targetId":"198944374","targetType":102,"title":"巨細 | こさい ⓪","excerpt":"[名] 大小，巨细；详细，仔细"}]}}}}
+[02:05:40 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u5927\u5C0F"}'
+[02:05:40 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198982741","targetType":102,"title":"大小 | だいしょう ①","excerpt":"[名] 大小；大（的）与小（的）；（武士佩带的）大刀和小刀；大小鼓"},{"targetId":"apsYj4o9cs","targetType":102,"title":"大小 | おおさ","excerpt":"[名] 大きさ。＊東大寺諷誦文平安初期点「大小(オホサ)は雀の如し」"},{"targetId":"198963854","targetType":102,"title":"手頃 | てごろ ⓪","excerpt":"[形动] 适手，大小、轻重正合手；适合，适称，与能力或情况正好相合"},{"targetId":"198973180","targetType":102,"title":"吹き回し | ふきまわし ⓪","excerpt":"[名] （一时的）心情；风的强弱、大小、方向等情况"},{"targetId":"198944374","targetType":102,"title":"巨細 | こさい ⓪","excerpt":"[名] 大小，巨细；详细，仔细"}]}}}}
+[02:07:19 INF] 应用程序关闭
+[02:11:48 INF] 应用程序启动
+[02:12:00 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u767C\u5149"}'
+[02:12:00 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198996614","targetType":102,"title":"発光 | はっこう ⓪","excerpt":"[名·自动·サ变] 发光"}]}}}}
+[02:12:11 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u767C\u5149"}'
+[02:12:11 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198996614","targetType":102,"title":"発光 | はっこう ⓪","excerpt":"[名·自动·サ变] 发光"}]}}}}
+[02:12:13 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u9084\u65E9\u767C\u5149"}'
+[02:12:13 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[]}}}}
+[02:12:18 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u767C\u5149"}'
+[02:12:18 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198996614","targetType":102,"title":"発光 | はっこう ⓪","excerpt":"[名·自动·サ变] 发光"}]}}}}
+[02:12:52 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u6309"}'
+[02:12:52 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"i177381c277401956","targetType":102,"title":"按 | おさえ","excerpt":"[名] 按：おさえ"},{"targetId":"TGhrzUr7on","targetType":102,"title":"按 | あん","excerpt":"[名] 手でおさえること。なでること。「按摩」"},{"targetId":"198930318","targetType":102,"title":"案 | あん ①","excerpt":"[名] 意见，主意；计划，方案；议案，法案；意料，设想，预期；草稿，草案"},{"targetId":"01nJE3IPlY","targetType":102,"title":"案 | あ","excerpt":"[名] (アンのンを表記しない形) 考え。思案。源氏物語蛍"},{"targetId":"198934592","targetType":102,"title":"押さえる | おさえる ③②","excerpt":"[他动·一段] 压，摁，按；堵住，捂；抓住；认识，理解；确保，掌握","excerptB":"[他动·二类] 压，摁，按；堵住，捂；抓住；认识，理解；确保，掌握"}]}}}}
+[02:13:29 INF] 应用程序关闭
+[02:14:51 INF] 应用程序启动
+[02:15:01 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u8BF4\u660E"}'
+[02:15:02 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198976857","targetType":102,"title":"説明 | せつめい ⓪","excerpt":"[名·他动·サ变] 说明；解释；讲解"},{"targetId":"198920057","targetType":102,"title":"述べる | のべる ②","excerpt":"[他动·一段] 叙述；陈述；说明；申诉；阐明","excerptB":"[他动·二类] 叙述；陈述；说明；申诉；阐明"},{"targetId":"1989108820","targetType":102,"title":"諭す | さとす ②⓪","excerpt":"[他动·五段] 晓谕，说明（道理），使了解，告戒，教导，教诲","excerptB":"[他动·一类] 晓谕，说明（道理），使了解，告戒，教导，教诲"},{"targetId":"19893572","targetType":102,"title":"説く | とく ①","excerpt":"[他动·五段] 说明；劝说，说服；讲；宣传，提倡，说教","excerptB":"[他动·一类] 说明；劝说，说服；讲；宣传，提倡，说教"},{"targetId":"1989101426","targetType":102,"title":"物語る | ものがたる ④","excerpt":"[他动·五段] 讲，谈；说明","excerptB":"[他动·一类] 讲，谈；说明"}]}}}}
+[02:16:31 INF] 应用程序关闭

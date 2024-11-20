@@ -11,7 +11,11 @@ using System.Windows.Documents;  // 添加这行
 using System.Windows.Interop;
 using Microsoft.Extensions.Configuration;
 using System.Windows.Forms; // Windows Forms 组件
-using System.Drawing; // 系统图标
+using System.Drawing; // 用于 Icon
+using DrawingColor = System.Drawing.Color; // 为 System.Drawing.Color 添加别名
+using MediaColor = System.Windows.Media.Color; // 为 System.Windows.Media.Color 添加别名
+using System.Windows.Media; // 用于 SolidColorBrush
+using System.ComponentModel; // 添加 TypeConverter 的引用
 using MessageBox = System.Windows.MessageBox;  // 添加在文件开头的 using 部分
 using WinFormsApplication = System.Windows.Forms.Application;
 using WpfApplication = System.Windows.Application;
@@ -376,9 +380,53 @@ namespace moji
         {
             ResultTextBox.Document = flowDoc;
             
+            // 不需要创建 ColorConverter 实例
+            foreach (var block in flowDoc.Blocks)
+            {
+                if (block is Paragraph para)
+                {
+                    // 标题样式
+                    if (para.Inlines.FirstInline is Run titleRun && titleRun.FontWeight == FontWeights.Bold)
+                    {
+                        titleRun.Foreground = new SolidColorBrush((MediaColor)System.Windows.Media.ColorConverter.ConvertFromString("#2196F3"));
+                        titleRun.FontSize = 16;
+                    }
+                    // 内容样式
+                    else
+                    {
+                        foreach (var inline in para.Inlines)
+                        {
+                            if (inline is Run run)
+                            {
+                                run.Foreground = new SolidColorBrush((MediaColor)System.Windows.Media.ColorConverter.ConvertFromString("#333333"));
+                                run.FontSize = 14;
+                            }
+                        }
+                    }
+                }
+            }
+            
             // 确保滚动条始终隐藏
             ResultTextBox.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
             ResultTextBox.HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden;
+        }
+
+        private void DragWindow(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void MinimizeWindow(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void CloseWindow(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
         }
 
         [DllImport("user32.dll")]
