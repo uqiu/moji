@@ -121,7 +121,7 @@ namespace moji
             contextMenu.Items.Add(exitItem);
             notifyIcon.ContextMenuStrip = contextMenu;
 
-            // 双击托盘图标显���窗口
+            // 双击托盘图标显示窗口
             notifyIcon.MouseDoubleClick += (s, e) => 
             {
                 this.Show();
@@ -206,9 +206,10 @@ namespace moji
             {
                 WpfApplication.Current.Dispatcher.Invoke(() =>
                 {
-                    ResultTextBox.Document = new FlowDocument(new Paragraph(
+                    var errorDoc = new FlowDocument(new Paragraph(
                         new Run($"发生错误: {ex.Message}")
                     ));
+                    UpdateResultTextBox(errorDoc);
                     Show();
                     Activate();
                 });
@@ -226,17 +227,20 @@ namespace moji
                     WindowState = WindowState.Normal;
                     Activate();
                     
-                    ResultTextBox.Document = new FlowDocument(new Paragraph(
+                    var loadingDoc = new FlowDocument(new Paragraph(
                         new Run("正在查询...")
                     ));
+                    UpdateResultTextBox(loadingDoc);
+                    
                     var clipboardText = System.Windows.Clipboard.GetText();
                     await SendHttpRequest(clipboardText);
                 }
                 else
                 {
-                    ResultTextBox.Document = new FlowDocument(new Paragraph(
+                    var noContentDoc = new FlowDocument(new Paragraph(
                         new Run("剪切板没有文本内容")
                     ));
+                    UpdateResultTextBox(noContentDoc);
                     Show();
                     Activate();
                 }
@@ -244,9 +248,10 @@ namespace moji
             }
             catch (Exception ex)
             {
-                ResultTextBox.Document = new FlowDocument(new Paragraph(
+                var errorDoc = new FlowDocument(new Paragraph(
                     new Run($"处理剪贴板内容时发生错误: {ex.Message}")
                 ));
+                UpdateResultTextBox(errorDoc);
                 Show();
                 Activate();
             }
@@ -334,22 +339,24 @@ namespace moji
                             flowDoc.Blocks.Add(para);
                         }
 
-                        ResultTextBox.Document = flowDoc;
+                        UpdateResultTextBox(flowDoc);
                     }
                     else 
                     {
-                        ResultTextBox.Document = new FlowDocument(new Paragraph(
+                        var errorDoc = new FlowDocument(new Paragraph(
                             new Run($"请求失败: {response.StatusCode}\n{responseContent}")
                         ));
+                        UpdateResultTextBox(errorDoc);
                     }
                 }
             }
             catch (Exception ex)
             {
-                _logger.Error(ex, "发送请求时发生错误");
-                ResultTextBox.Document = new FlowDocument(new Paragraph(
+                var errorDoc = new FlowDocument(new Paragraph(
                     new Run($"发送请求时发生错误: {ex.Message}")
                 ));
+                UpdateResultTextBox(errorDoc);
+                _logger.Error(ex, "发送请求时发生错误");
             }
         }
 
@@ -363,6 +370,15 @@ namespace moji
             curlCommand += $"  -H 'content-type: application/json;charset=UTF-8' \\\n";
             curlCommand += $"  --data-raw '{jsonContent}'";
             return curlCommand;
+        }
+
+        private void UpdateResultTextBox(FlowDocument flowDoc)
+        {
+            ResultTextBox.Document = flowDoc;
+            
+            // 确保滚动条始终隐藏
+            ResultTextBox.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
+            ResultTextBox.HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden;
         }
 
         [DllImport("user32.dll")]
