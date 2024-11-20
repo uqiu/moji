@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:moji"
         mc:Ignorable="d"
         Title="Moji Dict" Height="450" Width="800"
-        Background="Transparent"
+        Background="{Binding WindowBackground}"
         WindowStyle="None"
         AllowsTransparency="True"
         ResizeMode="CanResizeWithGrip">
@@ -24,12 +24,15 @@
         </Style>
     </Window.Resources>
     
-    <Border CornerRadius="10" Background="White" Margin="0" 
-            BorderBrush="#E0E0E0" BorderThickness="1">
+    <Border CornerRadius="10" 
+            Background="{Binding WindowBackground}" 
+            Margin="0" 
+            BorderBrush="{Binding BorderBrush}" 
+            BorderThickness="1">
         <Border.Effect>
             <DropShadowEffect BlurRadius="15" Direction="-90" 
                             RenderingBias="Quality" ShadowDepth="2"
-                            Color="#DDDDDD"/>
+                            Color="{Binding ShadowColor}"/>
         </Border.Effect>
         <Grid>
             <Grid.RowDefinitions>

@@ -1,0 +1,13 @@
+
+{
+  "baseURL": "http://api.example.com",
+  "timeout": 5000,
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "retry": {
+    "maxAttempts": 3,
+    "delay": 1000
+  }
+}

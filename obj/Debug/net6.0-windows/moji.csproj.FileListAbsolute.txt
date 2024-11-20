@@ -39,3 +39,5 @@ C:\code\moji\bin\Debug\net6.0-windows\Serilog.Sinks.File.dll
 C:\code\moji\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
 C:\code\moji\bin\Debug\net6.0-windows\System.Text.Json.dll
 C:\code\moji\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\code\moji\bin\Debug\net6.0-windows\DotNetEnv.dll
+C:\code\moji\bin\Debug\net6.0-windows\Sprache.dll

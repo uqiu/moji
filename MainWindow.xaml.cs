@@ -21,13 +21,15 @@ using WinFormsApplication = System.Windows.Forms.Application;
 using WpfApplication = System.Windows.Application;
 using System.Collections.Generic;  // 添加 Dictionary 支持
 using Serilog;
+using DotNetEnv; // 添加这行
+using MediaColorConverter = System.Windows.Media.ColorConverter;  // 添加到 using 区域
 
 namespace moji
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         private const int HOTKEY_ID = 9000;
         private HwndSource? _source;  // 添加字段保存 source 引用
@@ -35,13 +37,61 @@ namespace moji
         public NotifyIcon? notifyIcon;  // 改为 public
         private readonly ILogger _logger;
 
+        private SolidColorBrush _windowBackground;
+        private SolidColorBrush _borderBrush;
+        private MediaColor _shadowColor;  // 修改这里
+
+        public SolidColorBrush WindowBackground
+        {
+            get => _windowBackground;
+            set
+            {
+                _windowBackground = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WindowBackground)));
+            }
+        }
+
+        public SolidColorBrush BorderBrush
+        {
+            get => _borderBrush;
+            set
+            {
+                _borderBrush = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(BorderBrush)));
+            }
+        }
+
+        public MediaColor ShadowColor  // 修改这里
+        {
+            get => _shadowColor;
+            set
+            {
+                _shadowColor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ShadowColor)));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public MainWindow()
         {
             try
             {
                 InitializeComponent();
+                Env.Load(); // 加载.env文件
+                this.DataContext = this;
+                
+                // 设置颜色
+                string bgColor = Env.GetString("UI_BACKGROUND_COLOR") ?? "#FFFFFF";
+                string borderColor = Env.GetString("UI_BORDER_COLOR") ?? "#E0E0E0";
+                string shadowColor = Env.GetString("UI_SHADOW_COLOR") ?? "#DDDDDD";
+
+                WindowBackground = new SolidColorBrush((MediaColor)MediaColorConverter.ConvertFromString(bgColor));
+                BorderBrush = new SolidColorBrush((MediaColor)MediaColorConverter.ConvertFromString(borderColor));
+                ShadowColor = (MediaColor)MediaColorConverter.ConvertFromString(shadowColor);
+
                 InitializeNotifyIcon(); // 添加初始化托盘图标
-                this.Deactivated += MainWindow_Deactivated; // 添加失去焦点事件处理
+                this.Deactivated += MainWindow_Deactivated; // ��加失去焦点事件处理
                 this.Hide(); // 启动时隐藏主窗口
 
                 var builder = new ConfigurationBuilder()
@@ -70,7 +120,7 @@ namespace moji
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
-            this.ShowInTaskbar = false; // 在任务栏不显示图标
+            this.ShowInTaskbar = false; // 在��务栏不显示图标
             
             // 确保先注销已存在的热键
             var helper = new WindowInteropHelper(this);
@@ -154,15 +204,16 @@ namespace moji
                 _source?.AddHook(HwndHook);
 
                 const uint MOD_ALT = 0x0001;
-                const uint VK_L = 0x4C;
+                const uint MOD_CONTROL = 0x0002;
+                const uint VK_F20 = 0x83;  // F20的虚拟键码
 
-                // 尝试注册热键
-                bool success = RegisterHotKey(helper.Handle, HOTKEY_ID, MOD_ALT, VK_L);
+                // 尝试注册热键 (MOD_CONTROL | MOD_ALT 组合CTRL+ALT)
+                bool success = RegisterHotKey(helper.Handle, HOTKEY_ID, MOD_CONTROL | MOD_ALT, VK_F20);
                 
                 if (!success)
                 {
                     int error = Marshal.GetLastWin32Error();
-                    MessageBox.Show($"注册热键失败: 错误代码 {error}\n请确保没有其他程序占用了 ALT+L 快捷键");
+                    MessageBox.Show($"注册热键失败: 错误代码 {error}\n请确保没有其他程序占用了 CTRL+ALT+F20 快捷键");
                 }
             }
             catch (Exception ex)
@@ -269,28 +320,28 @@ namespace moji
                 {
                     const string url = "https://api.mojidict.com/parse/functions/search-all";
 
-                    // 设置所有请求头
+                    // 从环境变量读取请求头
                     client.DefaultRequestHeaders.Clear();
-                    client.DefaultRequestHeaders.Add("accept", "application/json, text/plain, */*");
-                    client.DefaultRequestHeaders.Add("accept-language", "zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7,ja;q=0.6");
-                    client.DefaultRequestHeaders.Add("origin", "chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf");
-                    client.DefaultRequestHeaders.Add("priority", "u=1, i");
-                    client.DefaultRequestHeaders.Add("sec-ch-ua", "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"");
-                    client.DefaultRequestHeaders.Add("sec-ch-ua-mobile", "?0");
-                    client.DefaultRequestHeaders.Add("sec-ch-ua-platform", "\"Windows\"");
-                    client.DefaultRequestHeaders.Add("sec-fetch-dest", "empty");
-                    client.DefaultRequestHeaders.Add("sec-fetch-mode", "cors");
-                    client.DefaultRequestHeaders.Add("sec-fetch-site", "none");
-                    client.DefaultRequestHeaders.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36");
+                    client.DefaultRequestHeaders.Add("accept", Env.GetString("HTTP_ACCEPT"));
+                    client.DefaultRequestHeaders.Add("accept-language", Env.GetString("HTTP_ACCEPT_LANGUAGE"));
+                    client.DefaultRequestHeaders.Add("origin", Env.GetString("HTTP_ORIGIN"));
+                    client.DefaultRequestHeaders.Add("priority", Env.GetString("HTTP_PRIORITY"));
+                    client.DefaultRequestHeaders.Add("sec-ch-ua", Env.GetString("HTTP_SEC_CH_UA"));
+                    client.DefaultRequestHeaders.Add("sec-ch-ua-mobile", Env.GetString("HTTP_SEC_CH_UA_MOBILE"));
+                    client.DefaultRequestHeaders.Add("sec-ch-ua-platform", Env.GetString("HTTP_SEC_CH_UA_PLATFORM"));
+                    client.DefaultRequestHeaders.Add("sec-fetch-dest", Env.GetString("HTTP_SEC_FETCH_DEST"));
+                    client.DefaultRequestHeaders.Add("sec-fetch-mode", Env.GetString("HTTP_SEC_FETCH_MODE"));
+                    client.DefaultRequestHeaders.Add("sec-fetch-site", Env.GetString("HTTP_SEC_FETCH_SITE"));
+                    client.DefaultRequestHeaders.Add("user-agent", Env.GetString("HTTP_USER_AGENT"));
 
                     // 构建请求体
                     var requestBody = new
                     {
-                        g_os = "webExtension",
-                        g_ver = "v4.7.6.20240313",
-                        _InstallationId = "7d959a18-48c4-243c-7486-632147466544",
-                        _ClientVersion = "js3.4.1",
-                        _ApplicationId = "E62VyFVLMiW7kvbtVq3p",
+                        g_os = Env.GetString("REQUEST_G_OS"),
+                        g_ver = Env.GetString("REQUEST_G_VER"),
+                        _InstallationId = Env.GetString("REQUEST_INSTALLATION_ID"),
+                        _ClientVersion = Env.GetString("REQUEST_CLIENT_VERSION"),
+                        _ApplicationId = Env.GetString("REQUEST_APPLICATION_ID"),
                         types = new[] { 102 },
                         text = clipboardText
                     };
@@ -379,27 +430,52 @@ namespace moji
         private void UpdateResultTextBox(FlowDocument flowDoc)
         {
             ResultTextBox.Document = flowDoc;
+            string defaultTextColor = Env.GetString("UI_DEFAULT_TEXT_COLOR") ?? "#999999";
             
-            // 不需要创建 ColorConverter 实例
             foreach (var block in flowDoc.Blocks)
             {
                 if (block is Paragraph para)
                 {
-                    // 标题样式
+                    // 设置段落默认文本颜色
+                    para.Foreground = new SolidColorBrush(
+                        (MediaColor)MediaColorConverter.ConvertFromString(defaultTextColor));
+
                     if (para.Inlines.FirstInline is Run titleRun && titleRun.FontWeight == FontWeights.Bold)
                     {
-                        titleRun.Foreground = new SolidColorBrush((MediaColor)System.Windows.Media.ColorConverter.ConvertFromString("#2196F3"));
+                        // 主要词（标题）样式
+                        string titleColor = Env.GetString("UI_TITLE_COLOR") ?? "#2196F3";
+                        titleRun.Foreground = new SolidColorBrush(
+                            (MediaColor)MediaColorConverter.ConvertFromString(titleColor));
                         titleRun.FontSize = 16;
                     }
-                    // 内容样式
                     else
                     {
+                        bool isFirst = true;
                         foreach (var inline in para.Inlines)
                         {
                             if (inline is Run run)
                             {
-                                run.Foreground = new SolidColorBrush((MediaColor)System.Windows.Media.ColorConverter.ConvertFromString("#333333"));
+                                string color;
+                                if (isFirst && run.FontWeight == FontWeights.Bold)
+                                {
+                                    // 词条样式
+                                    color = Env.GetString("UI_CONTENT_COLOR") ?? "#333333";
+                                }
+                                else if (run.Text.Trim().Length > 0)  // 只为非空文本设置颜色
+                                {
+                                    // 释义样式
+                                    color = Env.GetString("UI_SECONDARY_COLOR") ?? "#666666";
+                                }
+                                else
+                                {
+                                    // 使用默认颜色
+                                    color = defaultTextColor;
+                                }
+                                
+                                run.Foreground = new SolidColorBrush(
+                                    (MediaColor)MediaColorConverter.ConvertFromString(color));
                                 run.FontSize = 14;
+                                isFirst = false;
                             }
                         }
                     }

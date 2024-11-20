@@ -476,3 +476,660 @@ curl 'https://api.mojidict.com/parse/functions/search-all' \
 状态码: "OK"
 响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198976857","targetType":102,"title":"説明 | せつめい ⓪","excerpt":"[名·他动·サ变] 说明；解释；讲解"},{"targetId":"198920057","targetType":102,"title":"述べる | のべる ②","excerpt":"[他动·一段] 叙述；陈述；说明；申诉；阐明","excerptB":"[他动·二类] 叙述；陈述；说明；申诉；阐明"},{"targetId":"1989108820","targetType":102,"title":"諭す | さとす ②⓪","excerpt":"[他动·五段] 晓谕，说明（道理），使了解，告戒，教导，教诲","excerptB":"[他动·一类] 晓谕，说明（道理），使了解，告戒，教导，教诲"},{"targetId":"19893572","targetType":102,"title":"説く | とく ①","excerpt":"[他动·五段] 说明；劝说，说服；讲；宣传，提倡，说教","excerptB":"[他动·一类] 说明；劝说，说服；讲；宣传，提倡，说教"},{"targetId":"1989101426","targetType":102,"title":"物語る | ものがたる ④","excerpt":"[他动·五段] 讲，谈；说明","excerptB":"[他动·一类] 讲，谈；说明"}]}}}}
 [02:16:31 INF] 应用程序关闭
+[02:39:43 INF] 应用程序启动
+[02:39:47 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u5F53\u524D\u8D8B\u52BF\n\u6709\u4EC0\u4E48\u65B0\u9C9C\u4E8B\uFF1F\n\u4E2D\u90E8\u5730\u65B9 \u7684\u8D8B\u52BF\nAKIRA\n9.04\u4E07 posts\n\u65E5\u672C \u7684\u8D8B\u52BF\n#\u78A7\u4F9D\u3055\u304F\u3089\n\u5A31\u4E50 \u8D8B\u52BF\n\u751F\u9996\u30B5\u30E0\u30CD\n\u8D8B\u52BF \u30C7\u30A3\u30BA\u30CB\u30FC\u516C\u5F0F\n\u65E5\u672C \u7684\u8D8B\u52BF\n\u30B7\u30D9\u30EA\u30A2\u5357\u90E8\n\u8D8B\u52BF \u30A2\u30F3\u30C0\u30FC\u30C6\u30A4\u30AB\u30FC\uFF0C\u30D5\u30A9\u30B9\u306E\u58F0\n\u663E\u793A\u66F4\u591A\n    Eric Liu \u5218\u529B\u670B\n    @EricLiu_USA\n\u666E\u901A\u5C71\u7F8A\n@MoltenGoat\n\u7FD4\u6CF3\u793E\u306E\u30D3\u30B8\u30CD\u30B9\u3068IT\u306E\u672C\n@Shoeisha_BizIT\n\u663E\u793A\u66F4\u591A\n\u670D\u52A1\u6761"}'
+[02:39:47 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{}}}
+[02:39:47 ERR] 发送请求时发生错误
+System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Text.Json.JsonElement.GetProperty(String propertyName)
+   at moji.MainWindow.SendHttpRequest(String clipboardText) in C:\code\moji\MainWindow.xaml.cs:line 319
+[02:39:52 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u5F53\u524D\u8D8B\u52BF\n\u6709\u4EC0\u4E48\u65B0\u9C9C\u4E8B\uFF1F\n\u4E2D\u90E8\u5730\u65B9 \u7684\u8D8B\u52BF\nAKIRA\n9.04\u4E07 posts\n\u65E5\u672C \u7684\u8D8B\u52BF\n#\u78A7\u4F9D\u3055\u304F\u3089\n\u5A31\u4E50 \u8D8B\u52BF\n\u751F\u9996\u30B5\u30E0\u30CD\n\u8D8B\u52BF \u30C7\u30A3\u30BA\u30CB\u30FC\u516C\u5F0F\n\u65E5\u672C \u7684\u8D8B\u52BF\n\u30B7\u30D9\u30EA\u30A2\u5357\u90E8\n\u8D8B\u52BF \u30A2\u30F3\u30C0\u30FC\u30C6\u30A4\u30AB\u30FC\uFF0C\u30D5\u30A9\u30B9\u306E\u58F0\n\u663E\u793A\u66F4\u591A\n    Eric Liu \u5218\u529B\u670B\n    @EricLiu_USA\n\u666E\u901A\u5C71\u7F8A\n@MoltenGoat\n\u7FD4\u6CF3\u793E\u306E\u30D3\u30B8\u30CD\u30B9\u3068IT\u306E\u672C\n@Shoeisha_BizIT\n\u663E\u793A\u66F4\u591A\n\u670D\u52A1\u6761"}'
+[02:39:52 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{}}}
+[02:39:52 ERR] 发送请求时发生错误
+System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Text.Json.JsonElement.GetProperty(String propertyName)
+   at moji.MainWindow.SendHttpRequest(String clipboardText) in C:\code\moji\MainWindow.xaml.cs:line 319
+[02:39:55 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u3042\u308C"}'
+[02:39:55 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198997665","targetType":102,"title":"あれ | あれ ⓪","excerpt":"[代名] 那，那个；那时；那儿，那里；那件事"},{"targetId":"WPeB6uEaHn","targetType":102,"title":"あれ | あれ ⓪","excerpt":"[惯用] （表示惊讶、奇怪时）哎呀！（＝あれ）"},{"targetId":"1mA0gyzYet","targetType":102,"title":"荒 | あれ","excerpt":"[名]  土地、建物などがいたむこと。荒廃。"},{"targetId":"198953785","targetType":102,"title":"荒れ | あれ ⓪","excerpt":"[名] 风暴;暴风雨.；皲裂.；（起）风波."},{"targetId":"2MNSLobXGG","targetType":102,"title":"吾 | あれ","excerpt":"[代名] 自称。私。中古以降は「われ」が用いられるようになった。＊古事記‐中・歌謡「撓(たわ)や腕(がひな)を枕(ま)かむとは阿礼(アレ)はすれど」"}]}}}}
+[02:40:08 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u6771\u6B66"}'
+[02:40:08 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"i177381d95e304754","targetType":102,"title":"東武 | とおぶ","excerpt":"[名] 東武：とおぶ"},{"targetId":"i176fb2bf47e07782","targetType":102,"title":"東武 | とうぶ","excerpt":"[名] 指江户。"},{"targetId":"j0X0xcMDpH","targetType":102,"title":"東武線 | とうぶせん","excerpt":"[名] 東京都・埼玉県・群馬県・栃木県・千葉県で営業する大手私鉄の一。浅草・伊勢崎間の伊勢崎線、東武動物公園・東武日光間の日光線、池袋・寄居間の東上線などがある。"},{"targetId":"i1773d4fde9b0138f","targetType":102,"title":"東武金崎 | とうぶかなさき","excerpt":"[名] 所在地：栃木県(東武鉄道日光線)"},{"targetId":"i1773d4fdeb7013e6","targetType":102,"title":"東武練馬 | とうぶねりま","excerpt":"[名] 所在地：東京都(東武鉄道東上本線)"}]}}}}
+[02:40:17 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"Talkative"}'
+[02:40:18 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"Ij1vMJtDmP","targetType":102,"title":"トーク[talk] | とーく[とーく]","excerpt":"[名] 気楽に話すこと。おしゃべりをすること。談話。"},{"targetId":"5FmfHyevy7","targetType":102,"title":"口数の多い（少ない） | くちかず","excerpt":"[名] talkative (taciturn).→英和"},{"targetId":"DlCPYOJqNP","targetType":102,"title":"デリバティブ[derivative] | でりばてぃぶ[derivative]","excerpt":"[名] 株式・債券・外国為替かわせなど本来の金融商品から派生した金融取引。先物取引・オプション取引・スワップ取引など。金融派生商品。"},{"targetId":"XffJbLOwJ1","targetType":102,"title":"ネガティブ[negative] | ねがてぃぶ[ねがてぃぶ]","excerpt":"[名] 定的なさま。消極的なさま。"},{"targetId":"nqIqI0mYMI","targetType":102,"title":"イニシアチブ[initiative] | いにしあちぶ[initiative]","excerpt":"[名] 率先して物事をすること。また、主導権。イニシアティブ。"}]}}}}
+[02:40:35 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u5BC6\u306B\u3059\u308B"}'
+[02:40:35 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"u2X00Apx76","targetType":102,"title":"密にする | みつにする ①","excerpt":"[惯用] 使……紧密"},{"targetId":"2Yt3J7I0dH","targetType":102,"title":"緻密にする | ちみつにする","excerpt":"[名] 緻密にする densify 〘工学〙 木材などを加圧したり他の材料を含浸して，材料の密度を増すこと．"},{"targetId":"6uiVRLwFd9","targetType":102,"title":"━にする | ━にする","excerpt":"[名] 習得する。"},{"targetId":"198942440","targetType":102,"title":"気にする | きにする ⓪","excerpt":"[名] 在意，关心"},{"targetId":"198963646","targetType":102,"title":"手にする | てにする","excerpt":"[惯用] 拿在手里；弄到手"}]}}}}
+[02:40:55 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u80B2\u6210"}'
+[02:40:55 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198931125","targetType":102,"title":"育成 | いくせい ⓪","excerpt":"[名·他动·サ变] 培养，培育，培训，扶植，扶育"},{"targetId":"198935763","targetType":102,"title":"化成 | かせい ⓪","excerpt":"[名·自他动·サ变] 育成，育化；变形，变态；〈化〉化学合成；德化"},{"targetId":"UKFFDLwx7w","targetType":102,"title":"育成種 | いくせいしゅ ③","excerpt":"[名] 利用価値を高めるために改良された品種。育成品種。"},{"targetId":"i176dba9fc5f02f53","targetType":102,"title":"育成町 | いくせいまち","excerpt":"[名] 所在地：石川県小松市"},{"targetId":"fFeTpQr3nw","targetType":102,"title":"育成する | いくせい","excerpt":"[名] bring up;promote (助成).→英和"}]}}}}
+[02:42:45 INF] 应用程序关闭
+[02:42:52 INF] 应用程序启动
+[02:43:00 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u8AB9\u8B17"}'
+[02:43:01 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198998058","targetType":102,"title":"誹謗 | ひぼう ⓪","excerpt":"[名·他动·サ变] 诽谤说别人坏话"},{"targetId":"xbkyWKvPgW","targetType":102,"title":"誹謗中傷 | ひぼうちゅうしょう","excerpt":"[名] 根拠のない悪口を言いふらして、他人を傷つけることである"},{"targetId":"Or9hhQv0LS","targetType":102,"title":"誹謗之木 | ヒホ゛ウノホ゛ク","excerpt":"[名] 《故事》天子のあやまちを人民に書かせる立て札。▽帝舜(シュン)は、木の橋のたもとにたて、人々に政治上のあやまちを書かせて反省したという。「尭置敢諫之鼓、舜立誹謗之木=尭は敢諫の鼓を置き、舜は誹謗の木を立つ」〔淮南子・主術〕"},{"targetId":"i176fb5cf74c0c6a7","targetType":102,"title":"謗法 | ぼうほう","excerpt":"[名] 是「誹謗正法（ひぼうしょうぼう）」的省略说法，指毁谤佛法，蔑视真理。"}]}}}}
+[02:44:35 INF] 应用程序关闭
+[02:47:52 INF] 应用程序启动
+[02:48:01 ERR] 发送请求时发生错误
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at moji.MainWindow.SendHttpRequest(String clipboardText) in C:\code\moji\MainWindow.xaml.cs:line 287
+[02:50:39 INF] 应用程序关闭
+[02:54:03 INF] 应用程序启动
+[02:54:15 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u7D9C\u85DD"}'
+[02:54:16 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"cCWexdFLa4","targetType":102,"title":"シークレットゲスト | しーくれっとげすと ①","excerpt":"[名] 神秘嘉賓(綜藝節目之類的）"}]}}}}
+[02:54:23 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u7B11"}'
+[02:54:24 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"S4jGd78Kt3","targetType":102,"title":"笑 | わらい","excerpt":"[名]  笑うこと。えみ。また、その表情やその声。「笑いに紛らす」"},{"targetId":"j9tZBcV3At","targetType":102,"title":"笑 | え","excerpt":"[名] 笑うこと。「えがお(笑顔)」「えぐし(笑酒)」「えつぼ(笑壺)」などの形で用いる。"},{"targetId":"km1BUGYfpL","targetType":102,"title":"笑 | えみ","excerpt":"[名]  にっこりとすること。微笑。ほほえみ。「笑みを浮かべる」＊万葉‐四一六〇「ぬばたまの黒髪変り朝の咲(ゑみ)暮(ゆふへ)変らひ」"},{"targetId":"g78T6oNP8o","targetType":102,"title":"笑 | しょう","excerpt":"[名] 他人の受容を望む謙遜の語。「笑納・笑覧」"},{"targetId":"sf96jpZwv5","targetType":102,"title":"笑 | えまい","excerpt":"[名] (「えまう」の名詞化)"}]}}}}
+[03:04:52 INF] 应用程序关闭
+[03:09:43 INF] 应用程序启动
+[03:10:25 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"#333947"}'
+[03:10:25 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[]}}}}
+[03:10:27 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"#333947"}'
+[03:10:27 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[]}}}}
+[03:10:38 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u6837\u5F0F"}'
+[03:10:38 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"1989109943","targetType":102,"title":"様式 | ようしき ⓪","excerpt":"[名] 样式，方式；一定的形式，格式；式样，风格，格调"},{"targetId":"198994820","targetType":102,"title":"派手 | はで ②","excerpt":"[名·形动] （穿着打扮、样式、色调等）花哨，鲜艳，艳丽，华丽；（态度、行为等）夸张，浮华，讲阔气"},{"targetId":"198922912","targetType":102,"title":"フォーム | ふぉーむ","excerpt":"[名] form 姿势；形式，样式，型"},{"targetId":"198915292","targetType":102,"title":"スタイル | すたいる ②","excerpt":"[名] 身材；样式，型，式；【英】 style ;文体"},{"targetId":"198915291","targetType":102,"title":"スタイリング | すたいりんぐ ④","excerpt":"[名] styling款式，样式；只改变装潢（而内容不变）的商品"}]}}}}
+[03:10:49 INF] 应用程序关闭
+[03:10:55 INF] 应用程序启动
+[03:11:20 INF] 应用程序关闭
+[03:11:22 INF] 应用程序启动
+[03:11:26 INF] 应用程序关闭
+[03:13:11 INF] 应用程序启动
+[03:13:22 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u6226\u4E89"}'
+[03:13:23 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198977626","targetType":102,"title":"戦争 | せんそう ⓪","excerpt":"[名·サ变] 战争，战事；会战；打仗；如战争般的竞争、混乱等"},{"targetId":"RM0qTsNHy8","targetType":102,"title":"戦争中 | せんそうちゅう","excerpt":"[惯用] 战争中"},{"targetId":"220120w83250","targetType":102,"title":"戦争画 | せんそうが ⓪","excerpt":"[名] 戦争を主題にした絵画。ピカソの「ゲルニカ」に代表される反戦絵画，国策に協力し戦意高揚のために描かれた絵画，事実の記録としての歴史画など。"},{"targetId":"220120w83169","targetType":102,"title":"戦争論 | せんそうろん","excerpt":"[名] 原題 Vom Kriege プロイセンの将軍クラウゼビッツの著。三巻。著者没後の1832年刊。近代国家における戦争の本質を鋭く突いた古典的名著として評価が高い。"},{"targetId":"198977628","targetType":102,"title":"戦争状態 | せんそうじょうたい","excerpt":"[名·サ变] 战争状态"}]}}}}
+[03:13:39 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u6226\u4E89"}'
+[03:13:39 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198977626","targetType":102,"title":"戦争 | せんそう ⓪","excerpt":"[名·サ变] 战争，战事；会战；打仗；如战争般的竞争、混乱等"},{"targetId":"RM0qTsNHy8","targetType":102,"title":"戦争中 | せんそうちゅう","excerpt":"[惯用] 战争中"},{"targetId":"220120w83250","targetType":102,"title":"戦争画 | せんそうが ⓪","excerpt":"[名] 戦争を主題にした絵画。ピカソの「ゲルニカ」に代表される反戦絵画，国策に協力し戦意高揚のために描かれた絵画，事実の記録としての歴史画など。"},{"targetId":"220120w83169","targetType":102,"title":"戦争論 | せんそうろん","excerpt":"[名] 原題 Vom Kriege プロイセンの将軍クラウゼビッツの著。三巻。著者没後の1832年刊。近代国家における戦争の本質を鋭く突いた古典的名著として評価が高い。"},{"targetId":"198977628","targetType":102,"title":"戦争状態 | せんそうじょうたい","excerpt":"[名·サ变] 战争状态"}]}}}}
+[03:13:40 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u6226\u4E89"}'
+[03:13:40 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198977626","targetType":102,"title":"戦争 | せんそう ⓪","excerpt":"[名·サ变] 战争，战事；会战；打仗；如战争般的竞争、混乱等"},{"targetId":"RM0qTsNHy8","targetType":102,"title":"戦争中 | せんそうちゅう","excerpt":"[惯用] 战争中"},{"targetId":"220120w83250","targetType":102,"title":"戦争画 | せんそうが ⓪","excerpt":"[名] 戦争を主題にした絵画。ピカソの「ゲルニカ」に代表される反戦絵画，国策に協力し戦意高揚のために描かれた絵画，事実の記録としての歴史画など。"},{"targetId":"220120w83169","targetType":102,"title":"戦争論 | せんそうろん","excerpt":"[名] 原題 Vom Kriege プロイセンの将軍クラウゼビッツの著。三巻。著者没後の1832年刊。近代国家における戦争の本質を鋭く突いた古典的名著として評価が高い。"},{"targetId":"198977628","targetType":102,"title":"戦争状態 | せんそうじょうたい","excerpt":"[名·サ变] 战争状态"}]}}}}
+[03:13:46 INF] 应用程序关闭
+[03:13:49 INF] 应用程序启动
+[03:14:00 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u6226\u4E89"}'
+[03:14:00 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198977626","targetType":102,"title":"戦争 | せんそう ⓪","excerpt":"[名·サ变] 战争，战事；会战；打仗；如战争般的竞争、混乱等"},{"targetId":"RM0qTsNHy8","targetType":102,"title":"戦争中 | せんそうちゅう","excerpt":"[惯用] 战争中"},{"targetId":"220120w83250","targetType":102,"title":"戦争画 | せんそうが ⓪","excerpt":"[名] 戦争を主題にした絵画。ピカソの「ゲルニカ」に代表される反戦絵画，国策に協力し戦意高揚のために描かれた絵画，事実の記録としての歴史画など。"},{"targetId":"220120w83169","targetType":102,"title":"戦争論 | せんそうろん","excerpt":"[名] 原題 Vom Kriege プロイセンの将軍クラウゼビッツの著。三巻。著者没後の1832年刊。近代国家における戦争の本質を鋭く突いた古典的名著として評価が高い。"},{"targetId":"198977628","targetType":102,"title":"戦争状態 | せんそうじょうたい","excerpt":"[名·サ变] 战争状态"}]}}}}
+[03:14:04 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u5192"}'
+[03:14:04 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"CLONH5CHUg","targetType":102,"title":"冒 | ぼう","excerpt":"[名] おかすこと。無理に行うこと。「冒涜・冒険」"},{"targetId":"F4yw06VhJC","targetType":102,"title":"ボウ | ぼー","excerpt":"[名] bow 《「ボー」とも》"},{"targetId":"1989104463","targetType":102,"title":"冒す | おかす ②⓪","excerpt":"[他动·五段] 冒，不顾；侵袭；患（病）；冒充，冒称","excerptB":"[他动·一类] 冒，不顾；侵袭；患（病）；冒充，冒称"},{"targetId":"1989111362","targetType":102,"title":"立つ | たつ ①","excerpt":"[自动·五段] 立,站；冒，升，起；离开；退；出发,动身；行动起来奋起；飞,飞走","excerptB":"[自动·一类] 立,站；冒，升，起；离开；退；出发,动身；行动起来奋起；飞,飞走"},{"targetId":"1989111373","targetType":102,"title":"立てる | たてる ②","excerpt":"[他动·一段] 立，竖；冒，扬起；扎；立制定,起草","excerptB":"[他动·二类] 立，竖；冒，扬起；扎；立制定,起草"}]}}}}
+[03:15:00 INF] 应用程序关闭
+[03:15:02 INF] 应用程序启动
+[03:15:06 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u5192"}'
+[03:15:07 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"CLONH5CHUg","targetType":102,"title":"冒 | ぼう","excerpt":"[名] おかすこと。無理に行うこと。「冒涜・冒険」"},{"targetId":"F4yw06VhJC","targetType":102,"title":"ボウ | ぼー","excerpt":"[名] bow 《「ボー」とも》"},{"targetId":"1989104463","targetType":102,"title":"冒す | おかす ②⓪","excerpt":"[他动·五段] 冒，不顾；侵袭；患（病）；冒充，冒称","excerptB":"[他动·一类] 冒，不顾；侵袭；患（病）；冒充，冒称"},{"targetId":"1989111362","targetType":102,"title":"立つ | たつ ①","excerpt":"[自动·五段] 立,站；冒，升，起；离开；退；出发,动身；行动起来奋起；飞,飞走","excerptB":"[自动·一类] 立,站；冒，升，起；离开；退；出发,动身；行动起来奋起；飞,飞走"},{"targetId":"1989111373","targetType":102,"title":"立てる | たてる ②","excerpt":"[他动·一段] 立，竖；冒，扬起；扎；立制定,起草","excerptB":"[他动·二类] 立，竖；冒，扬起；扎；立制定,起草"}]}}}}
+[03:15:13 INF] 应用程序关闭
+[03:15:16 INF] 应用程序启动
+[03:15:21 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u5192"}'
+[03:15:21 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"CLONH5CHUg","targetType":102,"title":"冒 | ぼう","excerpt":"[名] おかすこと。無理に行うこと。「冒涜・冒険」"},{"targetId":"F4yw06VhJC","targetType":102,"title":"ボウ | ぼー","excerpt":"[名] bow 《「ボー」とも》"},{"targetId":"1989104463","targetType":102,"title":"冒す | おかす ②⓪","excerpt":"[他动·五段] 冒，不顾；侵袭；患（病）；冒充，冒称","excerptB":"[他动·一类] 冒，不顾；侵袭；患（病）；冒充，冒称"},{"targetId":"1989111362","targetType":102,"title":"立つ | たつ ①","excerpt":"[自动·五段] 立,站；冒，升，起；离开；退；出发,动身；行动起来奋起；飞,飞走","excerptB":"[自动·一类] 立,站；冒，升，起；离开；退；出发,动身；行动起来奋起；飞,飞走"},{"targetId":"1989111373","targetType":102,"title":"立てる | たてる ②","excerpt":"[他动·一段] 立，竖；冒，扬起；扎；立制定,起草","excerptB":"[他动·二类] 立，竖；冒，扬起；扎；立制定,起草"}]}}}}
+[03:15:29 INF] 应用程序关闭
+[03:15:32 INF] 应用程序启动
+[03:15:34 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u5192"}'
+[03:15:35 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"CLONH5CHUg","targetType":102,"title":"冒 | ぼう","excerpt":"[名] おかすこと。無理に行うこと。「冒涜・冒険」"},{"targetId":"F4yw06VhJC","targetType":102,"title":"ボウ | ぼー","excerpt":"[名] bow 《「ボー」とも》"},{"targetId":"1989104463","targetType":102,"title":"冒す | おかす ②⓪","excerpt":"[他动·五段] 冒，不顾；侵袭；患（病）；冒充，冒称","excerptB":"[他动·一类] 冒，不顾；侵袭；患（病）；冒充，冒称"},{"targetId":"1989111362","targetType":102,"title":"立つ | たつ ①","excerpt":"[自动·五段] 立,站；冒，升，起；离开；退；出发,动身；行动起来奋起；飞,飞走","excerptB":"[自动·一类] 立,站；冒，升，起；离开；退；出发,动身；行动起来奋起；飞,飞走"},{"targetId":"1989111373","targetType":102,"title":"立てる | たてる ②","excerpt":"[他动·一段] 立，竖；冒，扬起；扎；立制定,起草","excerptB":"[他动·二类] 立，竖；冒，扬起；扎；立制定,起草"}]}}}}
+[03:15:54 INF] 应用程序关闭
+[03:15:57 INF] 应用程序启动
+[03:16:00 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u5192"}'
+[03:16:01 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"CLONH5CHUg","targetType":102,"title":"冒 | ぼう","excerpt":"[名] おかすこと。無理に行うこと。「冒涜・冒険」"},{"targetId":"F4yw06VhJC","targetType":102,"title":"ボウ | ぼー","excerpt":"[名] bow 《「ボー」とも》"},{"targetId":"1989104463","targetType":102,"title":"冒す | おかす ②⓪","excerpt":"[他动·五段] 冒，不顾；侵袭；患（病）；冒充，冒称","excerptB":"[他动·一类] 冒，不顾；侵袭；患（病）；冒充，冒称"},{"targetId":"1989111362","targetType":102,"title":"立つ | たつ ①","excerpt":"[自动·五段] 立,站；冒，升，起；离开；退；出发,动身；行动起来奋起；飞,飞走","excerptB":"[自动·一类] 立,站；冒，升，起；离开；退；出发,动身；行动起来奋起；飞,飞走"},{"targetId":"1989111373","targetType":102,"title":"立てる | たてる ②","excerpt":"[他动·一段] 立，竖；冒，扬起；扎；立制定,起草","excerptB":"[他动·二类] 立，竖；冒，扬起；扎；立制定,起草"}]}}}}
+[03:16:12 INF] 应用程序关闭
+[03:16:50 INF] 应用程序启动
+[03:16:53 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"333947"}'
+[03:16:53 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[]}}}}
+[03:17:07 INF] 应用程序关闭
+[03:17:09 INF] 应用程序启动
+[03:17:12 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"333947"}'
+[03:17:13 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[]}}}}
+[03:17:19 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u98DF\u3079"}'
+[03:17:19 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198970381","targetType":102,"title":"食べる | たべる ②","excerpt":"[他动·一段] 吃；生活","excerptB":"[他动·二类] 吃；生活"},{"targetId":"198970395","targetType":102,"title":"食べ物 | たべもの ③②","excerpt":"[名] 食物，吃食，吃的东西"},{"targetId":"198970399","targetType":102,"title":"食べ方 | たべかた ⓪","excerpt":"[名] 烹调法，作法，吃法，吃的规矩"},{"targetId":"198970400","targetType":102,"title":"食べ滓 | たべかす ③","excerpt":"[名] 吃剩下的东西，残羹，残渣；（夹在齿缝里的）饭菜残渣"},{"targetId":"Bs1QJrMjQq","targetType":102,"title":"食べ放 | たべ","excerpt":"[名] 食べ放題。"}]}}}}
+[03:17:49 INF] 应用程序关闭
+[03:18:30 INF] 应用程序启动
+[03:18:47 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u98DF\u3079"}'
+[03:18:48 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198970381","targetType":102,"title":"食べる | たべる ②","excerpt":"[他动·一段] 吃；生活","excerptB":"[他动·二类] 吃；生活"},{"targetId":"198970395","targetType":102,"title":"食べ物 | たべもの ③②","excerpt":"[名] 食物，吃食，吃的东西"},{"targetId":"198970399","targetType":102,"title":"食べ方 | たべかた ⓪","excerpt":"[名] 烹调法，作法，吃法，吃的规矩"},{"targetId":"198970400","targetType":102,"title":"食べ滓 | たべかす ③","excerpt":"[名] 吃剩下的东西，残羹，残渣；（夹在齿缝里的）饭菜残渣"},{"targetId":"Bs1QJrMjQq","targetType":102,"title":"食べ放 | たべ","excerpt":"[名] 食べ放題。"}]}}}}
+[03:21:27 INF] 应用程序关闭
+[03:21:34 INF] 应用程序启动
+[03:21:38 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"UI_SECONDARY_COLOR=#666666  # \u6DFB\u52A0\u6B21\u8981\u8BCD\u7684\u989C\u8272"}'
+[03:21:39 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[]}}}}
+[03:21:46 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u5708"}'
+[03:21:46 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"ZBtq5zmEPG","targetType":102,"title":"圈 | 圈","excerpt":"[名] 〔画 数〕11画 〔区 点〕5201〔ＪＩＳ〕5421〔シフトJIS〕9A9F 〔異体字〕圏 〔音 訓〕ケン・かこい"},{"targetId":"19891756","targetType":102,"title":"圏 | けん ①","excerpt":"[名] 区域，范围"},{"targetId":"IY7n3VriGg","targetType":102,"title":"圏 | けん","excerpt":"[名] 圏 category 〘数〙 ある対象の集まり，おのおのの対象の組に対する射の集合および射に対する合成の規則．集合と関数，群と準同型は重要な圏を形成する．"},{"targetId":"198910564","targetType":102,"title":"キーホルダー | きーほるだー ③","excerpt":"[名] 钥匙（挂）圈"},{"targetId":"198919096","targetType":102,"title":"ドーナツ | どーなつ ①","excerpt":"[名] doughnut油炸面（饼）圈，甜甜圈，面包圈"}]}}}}
+[03:24:45 INF] 应用程序关闭
+[03:24:50 INF] 应用程序启动
+[03:24:58 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u98DF\u3079"}'
+[03:24:59 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198970381","targetType":102,"title":"食べる | たべる ②","excerpt":"[他动·一段] 吃；生活","excerptB":"[他动·二类] 吃；生活"},{"targetId":"198970395","targetType":102,"title":"食べ物 | たべもの ③②","excerpt":"[名] 食物，吃食，吃的东西"},{"targetId":"198970399","targetType":102,"title":"食べ方 | たべかた ⓪","excerpt":"[名] 烹调法，作法，吃法，吃的规矩"},{"targetId":"198970400","targetType":102,"title":"食べ滓 | たべかす ③","excerpt":"[名] 吃剩下的东西，残羹，残渣；（夹在齿缝里的）饭菜残渣"},{"targetId":"Bs1QJrMjQq","targetType":102,"title":"食べ放 | たべ","excerpt":"[名] 食べ放題。"}]}}}}
+[03:25:10 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u98DF\u3079"}'
+[03:25:10 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198970381","targetType":102,"title":"食べる | たべる ②","excerpt":"[他动·一段] 吃；生活","excerptB":"[他动·二类] 吃；生活"},{"targetId":"198970395","targetType":102,"title":"食べ物 | たべもの ③②","excerpt":"[名] 食物，吃食，吃的东西"},{"targetId":"198970399","targetType":102,"title":"食べ方 | たべかた ⓪","excerpt":"[名] 烹调法，作法，吃法，吃的规矩"},{"targetId":"198970400","targetType":102,"title":"食べ滓 | たべかす ③","excerpt":"[名] 吃剩下的东西，残羹，残渣；（夹在齿缝里的）饭菜残渣"},{"targetId":"Bs1QJrMjQq","targetType":102,"title":"食べ放 | たべ","excerpt":"[名] 食べ放題。"}]}}}}
+[03:25:20 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u98DF\u3079"}'
+[03:25:20 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198970381","targetType":102,"title":"食べる | たべる ②","excerpt":"[他动·一段] 吃；生活","excerptB":"[他动·二类] 吃；生活"},{"targetId":"198970395","targetType":102,"title":"食べ物 | たべもの ③②","excerpt":"[名] 食物，吃食，吃的东西"},{"targetId":"198970399","targetType":102,"title":"食べ方 | たべかた ⓪","excerpt":"[名] 烹调法，作法，吃法，吃的规矩"},{"targetId":"198970400","targetType":102,"title":"食べ滓 | たべかす ③","excerpt":"[名] 吃剩下的东西，残羹，残渣；（夹在齿缝里的）饭菜残渣"},{"targetId":"Bs1QJrMjQq","targetType":102,"title":"食べ放 | たべ","excerpt":"[名] 食べ放題。"}]}}}}
+[03:25:22 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u98DF\u3079"}'
+[03:25:22 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198970381","targetType":102,"title":"食べる | たべる ②","excerpt":"[他动·一段] 吃；生活","excerptB":"[他动·二类] 吃；生活"},{"targetId":"198970395","targetType":102,"title":"食べ物 | たべもの ③②","excerpt":"[名] 食物，吃食，吃的东西"},{"targetId":"198970399","targetType":102,"title":"食べ方 | たべかた ⓪","excerpt":"[名] 烹调法，作法，吃法，吃的规矩"},{"targetId":"198970400","targetType":102,"title":"食べ滓 | たべかす ③","excerpt":"[名] 吃剩下的东西，残羹，残渣；（夹在齿缝里的）饭菜残渣"},{"targetId":"Bs1QJrMjQq","targetType":102,"title":"食べ放 | たべ","excerpt":"[名] 食べ放題。"}]}}}}
+[03:30:22 INF] 应用程序关闭
+[03:30:28 INF] 应用程序启动
+[03:32:51 INF] 应用程序关闭
