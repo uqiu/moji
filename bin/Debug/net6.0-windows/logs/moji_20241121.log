@@ -1162,3 +1162,81 @@ curl 'https://api.mojidict.com/parse/functions/search-all' \
 [21:59:52 INF] 应用程序关闭
 [21:59:56 INF] 应用程序启动
 [22:05:18 INF] 应用程序关闭
+[22:05:21 INF] 应用程序启动
+[22:05:25 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u7A97\u4F53"}'
+[22:05:26 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"i17742d56c3c0b07","targetType":102,"title":"シートスプリング | しーとすぷりんぐ","excerpt":"[名] 在座垫和座垫的背面，在吸收振动和冲击的同时，承担支撑垫的作用的弹簧。薄型弹簧有各种各样的种类，以钢琴钢和硬钢丝为基础，加工成各种各样的形状来使用。最广泛使用的S弹簧型、成形成各种形状的窗体导线、线圈弹簧等，其形状千差万别。这是因为薄板性能中的弹簧的设定具有实验性开发的要素，但是最近计算机的分析也在进行，被相当整理。"}]}}}}
+[22:06:13 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u4FEE\u6539"}'
+[22:06:13 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"220120w66151","targetType":102,"title":"修改 | しゅうかい ⓪","excerpt":"[名] スル 不備な点を改め正すこと。"},{"targetId":"198986941","targetType":102,"title":"直す | なおす ②","excerpt":"[他动·五段] 改正；修改，订正；矫正；修理，恢复，复原；换算，折合；接在动词连用形之后表示“再做一次”，再，重","excerptB":"[他动·一类] 改正；修改，订正；矫正；修理，恢复，复原；换算，折合；接在动词连用形之后表示“再做一次”，再，重"},{"targetId":"198988896","targetType":102,"title":"添削 | てんさく ⓪","excerpt":"[名·他动·サ变] 删改，修改，批改，斧正"},{"targetId":"198938016","targetType":102,"title":"改める | あらためる ④","excerpt":"[他动·一段] 改，改变；修改，革新；改正，改善；检，查，点，验","excerptB":"[他动·二类] 改，改变；修改，革新；改正，改善；检，查，点，验"},{"targetId":"198986939","targetType":102,"title":"直し | なおし ③②","excerpt":"[名] 修正，修改，改正；修，修理，修缮"}]}}}}
+[22:06:22 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u4FEE\u6539"}'
+[22:06:24 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"220120w66151","targetType":102,"title":"修改 | しゅうかい ⓪","excerpt":"[名] スル 不備な点を改め正すこと。"},{"targetId":"198986941","targetType":102,"title":"直す | なおす ②","excerpt":"[他动·五段] 改正；修改，订正；矫正；修理，恢复，复原；换算，折合；接在动词连用形之后表示“再做一次”，再，重","excerptB":"[他动·一类] 改正；修改，订正；矫正；修理，恢复，复原；换算，折合；接在动词连用形之后表示“再做一次”，再，重"},{"targetId":"198988896","targetType":102,"title":"添削 | てんさく ⓪","excerpt":"[名·他动·サ变] 删改，修改，批改，斧正"},{"targetId":"198938016","targetType":102,"title":"改める | あらためる ④","excerpt":"[他动·一段] 改，改变；修改，革新；改正，改善；检，查，点，验","excerptB":"[他动·二类] 改，改变；修改，革新；改正，改善；检，查，点，验"},{"targetId":"198986939","targetType":102,"title":"直し | なおし ③②","excerpt":"[名] 修正，修改，改正；修，修理，修缮"}]}}}}
+[22:06:28 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u6548\u679C"}'
+[22:06:28 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198952553","targetType":102,"title":"効果 | こうか ①","excerpt":"[名] 效果功效成效成绩；效果在广播剧和戏剧等的演出时，使用拟声以增加观（听）众身临其境的感觉，提高演出效果也指其工作人员"},{"targetId":"19891142","targetType":102,"title":"甲斐 | かい ⓪","excerpt":"[名] 效果；价值；好处，用处；意义"},{"targetId":"19891152","targetType":102,"title":"効 | かい ⓪","excerpt":"[名] 效果，价值"},{"targetId":"1989110878","targetType":102,"title":"利き | きき ⓪","excerpt":"[名] 好使，能干；效果，效用"},{"targetId":"198952562","targetType":102,"title":"効力 | こうりょく ①","excerpt":"[名] 效力；效果；效验"}]}}}}
+[22:08:02 INF] 应用程序关闭
