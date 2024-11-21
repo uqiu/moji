@@ -4,12 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:moji"
+        xmlns:interop="clr-namespace:Walterlv.Demo.Interop"
         mc:Ignorable="d"
         Title="Moji Dict" Height="450" Width="800"
-        Background="{Binding WindowBackground}"
+        Background="Transparent"
         WindowStyle="None"
         AllowsTransparency="True"
-        ResizeMode="CanResizeWithGrip">
+        ResizeMode="CanResizeWithGrip"
+        interop:WindowBlur.IsEnabled="True">
+    
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="-1" />
+    </WindowChrome.WindowChrome>
+
     <Window.Resources>
         <Style x:Key="ModernScrollViewer" TargetType="{x:Type ScrollViewer}">
             <Setter Property="Template">
@@ -24,15 +31,18 @@
         </Style>
     </Window.Resources>
     
-    <Border CornerRadius="10" 
-            Background="{Binding WindowBackground}" 
-            Margin="0" 
+    <!-- 设置边框和阴影 -->
+    <Border CornerRadius="0" 
+            Background="#A0202020"
+            Margin="0"
             BorderBrush="{Binding BorderBrush}" 
-            BorderThickness="1">
+            BorderThickness="0">
         <Border.Effect>
-            <DropShadowEffect BlurRadius="15" Direction="-90" 
-                            RenderingBias="Quality" ShadowDepth="2"
-                            Color="{Binding ShadowColor}"/>
+            <DropShadowEffect 
+                BlurRadius="0"
+                Direction="0"
+                ShadowDepth="0"
+                Opacity="0"/>
         </Border.Effect>
         <Grid>
             <Grid.RowDefinitions>

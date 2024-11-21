@@ -1133,3 +1133,32 @@ curl 'https://api.mojidict.com/parse/functions/search-all' \
 [03:30:22 INF] 应用程序关闭
 [03:30:28 INF] 应用程序启动
 [03:32:51 INF] 应用程序关闭
+[21:48:50 INF] 应用程序启动
+[21:51:16 INF] 应用程序关闭
+[21:51:20 INF] 应用程序启动
+[21:51:55 INF] 应用程序关闭
+[21:52:43 INF] 应用程序启动
+[21:54:04 INF] 应用程序关闭
+[21:55:42 INF] 应用程序启动
+[21:56:09 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u5168\u56FD"}'
+[21:56:09 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198978555","targetType":102,"title":"全国 | ぜんこく ①","excerpt":"[名] 全国（各地）；整个国家"},{"targetId":"198987193","targetType":102,"title":"津々浦々 | つつうらうら ⓪","excerpt":"[副词] 遍布全国的港口及海岸线；遍布全国；全国"},{"targetId":"198988599","targetType":102,"title":"天下 | てんか ①","excerpt":"[名] 天下，全国，世界，宇内"},{"targetId":"RITCs6hYC6","targetType":102,"title":"国を挙げる | くにをあげる ⓪","excerpt":"[惯用] 举国，全国。"},{"targetId":"198955044","targetType":102,"title":"国中 | くにじゅう ⓪","excerpt":"[名] 全国，全国各地，到处"}]}}}}
+[21:59:52 INF] 应用程序关闭
+[21:59:56 INF] 应用程序启动
+[22:05:18 INF] 应用程序关闭

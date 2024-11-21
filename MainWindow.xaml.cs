@@ -37,19 +37,8 @@ namespace moji
         public NotifyIcon? notifyIcon;  // 改为 public
         private readonly ILogger _logger;
 
-        private SolidColorBrush _windowBackground;
         private SolidColorBrush _borderBrush;
         private MediaColor _shadowColor;  // 修改这里
-
-        public SolidColorBrush WindowBackground
-        {
-            get => _windowBackground;
-            set
-            {
-                _windowBackground = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WindowBackground)));
-            }
-        }
 
         public SolidColorBrush BorderBrush
         {
@@ -81,12 +70,10 @@ namespace moji
                 Env.Load(); // 加载.env文件
                 this.DataContext = this;
                 
-                // 设置颜色
-                string bgColor = Env.GetString("UI_BACKGROUND_COLOR") ?? "#FFFFFF";
+                // 设置颜色 - 移除背景色设置
                 string borderColor = Env.GetString("UI_BORDER_COLOR") ?? "#E0E0E0";
                 string shadowColor = Env.GetString("UI_SHADOW_COLOR") ?? "#DDDDDD";
 
-                WindowBackground = new SolidColorBrush((MediaColor)MediaColorConverter.ConvertFromString(bgColor));
                 BorderBrush = new SolidColorBrush((MediaColor)MediaColorConverter.ConvertFromString(borderColor));
                 ShadowColor = (MediaColor)MediaColorConverter.ConvertFromString(shadowColor);
 
