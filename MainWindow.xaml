@@ -10,11 +10,14 @@
         Background="Transparent"
         WindowStyle="None"
         AllowsTransparency="True"
-        ResizeMode="CanResizeWithGrip"
+        ResizeMode="CanResize"
         interop:WindowBlur.IsEnabled="True">
     
     <WindowChrome.WindowChrome>
-        <WindowChrome GlassFrameThickness="-1" />
+        <WindowChrome 
+            GlassFrameThickness="-1"
+            ResizeBorderThickness="5"
+            CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
 
     <Window.Resources>
