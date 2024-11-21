@@ -35,15 +35,15 @@
     </Window.Resources>
     
     <!-- 设置边框和阴影 -->
+    <!-- 窗口背景色，E0表示88%不透明度 -->
     <Border CornerRadius="0" 
-            Background="#A0202020"
+            Background="#F2202020"
             Margin="0"
             BorderBrush="{Binding BorderBrush}" 
             BorderThickness="0">
         <Border.Effect>
             <DropShadowEffect 
                 BlurRadius="0"
-                Direction="0"
                 ShadowDepth="0"
                 Opacity="0"/>
         </Border.Effect>
@@ -82,3 +82,4 @@
         </Grid>
     </Border>
 </Window>
+

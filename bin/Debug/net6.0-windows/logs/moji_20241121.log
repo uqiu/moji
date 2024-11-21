@@ -1240,3 +1240,358 @@ curl 'https://api.mojidict.com/parse/functions/search-all' \
 状态码: "OK"
 响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198952553","targetType":102,"title":"効果 | こうか ①","excerpt":"[名] 效果功效成效成绩；效果在广播剧和戏剧等的演出时，使用拟声以增加观（听）众身临其境的感觉，提高演出效果也指其工作人员"},{"targetId":"19891142","targetType":102,"title":"甲斐 | かい ⓪","excerpt":"[名] 效果；价值；好处，用处；意义"},{"targetId":"19891152","targetType":102,"title":"効 | かい ⓪","excerpt":"[名] 效果，价值"},{"targetId":"1989110878","targetType":102,"title":"利き | きき ⓪","excerpt":"[名] 好使，能干；效果，效用"},{"targetId":"198952562","targetType":102,"title":"効力 | こうりょく ①","excerpt":"[名] 效力；效果；效验"}]}}}}
 [22:08:02 INF] 应用程序关闭
+[22:08:07 INF] 应用程序启动
+[22:08:17 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u7F8E\u89C2"}'
+[22:08:17 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198998419","targetType":102,"title":"美観 | びかん ⓪","excerpt":"[名] 美景"},{"targetId":"198928188","targetType":102,"title":"立派 | りっぱ ⓪","excerpt":"[形动] 庄严，堂堂；漂亮，美观，美丽，华丽；壮丽，宏伟，盛大；优秀，出色，杰出，卓越；高尚，崇高"},{"targetId":"198926463","targetType":102,"title":"見栄え | みばえ ⓪③","excerpt":"[名] （显得）好看，美观"},{"targetId":"i17742dc2bd3013e9","targetType":102,"title":"ホイップフェンダーアンテナ | ほいっぷふぇんだーあんてな","excerpt":"[名] 指的是在前厅和后座的挡泥板上用1根固定杆安装的天线。这是最常用的，对于性能、美观、截止音、操作性及成本等都是无可非议的天线。也称为保罗天线。然而，由于天线的长度相对于AM波长短而不是谐振天线，对于作为电容性天线的性能大的FM频带，不得不将进纸器线设计成AM，存在阻抗难以匹配的问题。除此之外，还有柱形天线、屋顶天线、窗口天线、分集天线等，具有JASO标准D501。"},{"targetId":"i177425533cf084c","targetType":102,"title":"美観地区 | びかんちく","excerpt":"[名] 美观地区。环境・景观保护区之一。是市町村为了维持市区的美观（人工的建筑美），作为都市计划规定的地区。具体的建筑限制内容根据建筑基准法由地方公共团体的条例来规定。现在，被指定为美观地区的有东京都、京都市、大阪市、伊势市等，会损害美观的建筑物构造和设施等的建设、设置等受到限制。"}]}}}}
+[22:08:39 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u6211\u4EEC"}'
+[22:08:39 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"220120w179905","targetType":102,"title":"我們 | がもん ⓪","excerpt":"[名] わたくしたち。我々。"},{"targetId":"1989104690","targetType":102,"title":"僕ら | ぼくら","excerpt":"[名] 我们"},{"targetId":"198960195","targetType":102,"title":"私たち | わたしたち ③","excerpt":"[名] 我们"},{"targetId":"198937371","targetType":102,"title":"我々 | われわれ ⓪","excerpt":"[名] 我们，咱们，我等"},{"targetId":"vVngUU5HMq","targetType":102,"title":"教えてくれる | おしえてくれる","excerpt":"[他动] 教我（我们）"}]}}}}
+[22:09:04 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u76F4\u63A5"}'
+[22:09:04 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198986997","targetType":102,"title":"直接 | ちょくせつ ⓪","excerpt":"[名·副词] 直接（的）没有其他事物介入的"},{"targetId":"SxQcraC5uR","targetType":102,"title":"直接 | じかつぎ","excerpt":"[名] 台木を植え、翌年発芽前にその枝を切り、目的の品種の穂木を袋つぎの方法でつぎ木すること。"},{"targetId":"198915545","targetType":102,"title":"ストレート | すとれーと ③","excerpt":"[名·形动] （英）straight 直接，直，一直；连，连续；直球；直击，直拳；（饮）不搀水〔苏打水〕的纯酒，不对水；首试及第，一次考中（上级学校）；（テニス・卓球）直线抽球，由右角直对对方左角或左角直对对方右角的）；（トランプ）顺子（五张号数相连的）；直举；直的；纯酒；[棒球]直球；连续胜利；[拳击]直拳；直板（手机）"},{"targetId":"198974752","targetType":102,"title":"正面 | しょうめん ③","excerpt":"[名] 正面；对面；直接，面对面"},{"targetId":"198971606","targetType":102,"title":"真っ直ぐ | まっすぐ ③","excerpt":"[名·形动] 直，笔直；直接，径直；正直，耿直，坦率，直率"}]}}}}
+[22:10:02 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u975E\u73FE\u5B9F\u7684"}'
+[22:10:03 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198998112","targetType":102,"title":"非現実的 | ひげんじつてき ⓪","excerpt":"[形动·动] 非现实性（的），不现实（的）"},{"targetId":"fRQQfLPSl5","targetType":102,"title":"非現実的(形) | ひげんじつてきかたち","excerpt":"[名] 非現実的(形) dereistic 〘心〙 現実，論理，あるいは経験と合致しないような心的活動に付随する．"},{"targetId":"198950335","targetType":102,"title":"現実的 | げんじつてき ⓪","excerpt":"[形动·动] 现实的，实际的"},{"targetId":"220120w100403","targetType":102,"title":"超現実的 | ちょうげんじつてき ⓪ ①","excerpt":"[形动] 現実からかけ離れているさま。実際にはあり得ないさま。非現実的。"},{"targetId":"198950331","targetType":102,"title":"現実 | げんじつ ⓪","excerpt":"[名] 现实；实际；真实；现实；实际"}]}}}}
+[22:11:10 INF] 应用程序关闭
+[22:13:34 INF] 应用程序启动
+[22:13:57 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u5305\u4E01"}'
+[22:13:58 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"1989103528","targetType":102,"title":"包丁 | ほうちょう ⓪","excerpt":"[名] 菜刀，切菜刀；烹调，烹饪（手艺）；刀工；厨师"},{"targetId":"XKtp1BkaDP","targetType":102,"title":"包丁（丁） | ほうちょう","excerpt":"[名] 料理に使う刃物。出刃でば包丁・刺身包丁・菜切り包丁など、用途によって多くの種類がある。 「包丁」は代用表記。 「一丁（挺）…」と数える。"},{"targetId":"E0gWolsRSm","targetType":102,"title":"包丁藤四郎 | ほうちょうとうしろう ⓪⓪","excerpt":"[名] 包丁藤四郎是一把镰仓时代制造的日本刀（短刀）。"},{"targetId":"1989101888","targetType":102,"title":"文化包丁 | ぶんかぼうちょう","excerpt":"[名] 近来被日本家庭广泛使用的“万能”菜刀具有刃薄，可以处理蔬菜，肉，鱼等特点得名“三德”又称“文化包丁”"},{"targetId":"N2J9QZ7WU3","targetType":102,"title":"包丁人 | ほうちょうにん","excerpt":"[名] 包丁を使って調理することの巧みな人。また、それを業とする人。料理人。包丁師。"}]}}}}
+[22:15:10 INF] 应用程序关闭
+[22:17:08 INF] 应用程序启动
+[22:17:17 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u62D6\u62FD"}'
+[22:17:17 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"i17742d569fd083c","targetType":102,"title":"サーボ型シンクロ | さーぼがたしんくろ","excerpt":"[名] 在MT的同步机构中，同步控制环使用鼓刹车的机构，根据刹车带的伺服效果，可以用轻的力进行同步操作的类型。也被称为保时捷型同步。在异步齿轮的齿轮样条内侧，由外周摩擦面的C状同步夜袭环、其内侧的滑动块、刹车带、锚块构成。当联轴器套移动时，内径摩擦面接触环的摩擦面。拖拽环，推推力块，然后推刹车带，以锁定块为支点扩展带，推环发挥伺服效果，提高同步力。"},{"targetId":"i17742d62c750ef8","targetType":102,"title":"引きずり抵抗 | ひきずりてーこー","excerpt":"[名] 即使解除制动，也残留有一部分制动力，是在不运转刹车的普通行驶状态下产生的制动力。将用旋转轴周围的扭矩表示的拉伸电阻称为拉伸扭矩。在盘式制动器中，如果解除制动器时的活塞密封件的活塞返回量（forlback）少，则拖拽变大。因为Fortback与踏板的初始行程密切相关，所以拉伸和踏板游戏两者的平衡很重要。另外，使用过程中垫的偏磨损也会增大剪切。在鼓闸中，在炮的感应不良的时候会发生，但是一般正常的时候可以无视拖拽。拉车阻力也会影响汽车的耗油量。"},{"targetId":"i17742dd3a4b01a5f","targetType":102,"title":"ドラッグリンク | どらっぐりんく","excerpt":"[名] 在前卫控制，也就是所谓的卡布过型的卡车和巴士中，由于操舵位置比前轮轴要前倾得多，所以有到方向盘齿轮箱和不旋转臂的距离，不能像轿车和小型卡车那样直接连接，只能用球接头需要打字机。这个链接叫拖拽链接。"},{"targetId":"i17742de5be601c4a","targetType":102,"title":"ピットマンアーム | ぴっとまんあーむ","excerpt":"[名] 通过操舵，将转向齿轮箱输出轴的摆动角位移传递到拖拽链接、拉杆或接力棒上的杆型臂。"},{"targetId":"i17742dd3abf01b4b","targetType":102,"title":"ブレーキ鳴き | ぶれーきなき","excerpt":"[名] 刹车机构发出的不愉快的声音。非制动时有时会因拖拽等原因发生，但主要发生在制动时。音色是从“Co”这个低频音到“键”和“チ”的高频音。摩擦材料和对方部件（圆盘和鼓）摩擦产生的振动与刹车系统部件谐振变大，成为声音。摩擦材料的选定、倾销垫片的插入、刹车部件之间固有振动数的分散化、加工精度的提高等防止叫声的技术在不断进步，虽然不像以前那样成为了问题，但仍然是刹车的主要品质课题之一。近年来，刹车以更高性能为目标，作为其手段之一，有垫的高摩擦系数化，但防止鸣声的同时也是课题。被称为滑铁石（音）等。"}]}}}}
+[22:17:46 INF] 应用程序关闭
+[22:17:51 INF] 应用程序启动
+[22:18:05 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u6478"}'
+[22:18:06 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"Nlxscn3Xav","targetType":102,"title":"摸 | も","excerpt":"[名] 手さぐりすること。「摸索」"},{"targetId":"198970289","targetType":102,"title":"触れる | ふれる ⓪","excerpt":"[自他动·一段] 触，碰，摸；涉及，触及，提到，谈到；（耳、目）感触到；遇到，碰到；违反，触犯；摸，动，触；通知","excerptB":"[自他动·二类] 触，碰，摸；涉及，触及，提到，谈到；（耳、目）感触到；遇到，碰到；违反，触犯；摸，动，触；通知"},{"targetId":"1989105110","targetType":102,"title":"摩る | さする ⓪","excerpt":"[他动·五段] 摩，摸，搓，摩抚，抚摩，摩挲","excerptB":"[他动·一类] 摩，摸，搓，摩抚，抚摩，摩挲"},{"targetId":"198983753","targetType":102,"title":"探る | さぐる ⓪","excerpt":"[他动·五段] 探；摸；刺探；试探；览胜，观赏；探查调查","excerptB":"[他动·一类] 探；摸；刺探；试探；览胜，观赏；探查调查"},{"targetId":"198963967","targetType":102,"title":"手探り | てさぐり ②","excerpt":"[名] 摸索，摸；试探，摸索"}]}}}}
+[22:18:19 INF] 应用程序关闭
+[22:18:29 INF] 应用程序启动
+[22:18:53 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u6703\u793E"}'
+[22:18:53 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u6703\u793E"}'
+[22:18:53 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198937613","targetType":102,"title":"会社 | かいしゃ ⓪","excerpt":"[名] 公司"},{"targetId":"5pAGY6fxDX","targetType":102,"title":"バトル鉛筆 | ばとるえんぴつ ①⓪","excerpt":"[名]戰鬥鉛筆 此桌遊為艾尼克斯株式會社（現為史克威爾艾尼克斯株式會社）於1993年，沿用熱門RPG遊戲系列《勇者鬥惡龍》為基礎的滾鉛筆遊戲。 各個玩家一開始擁有100HP（生命值/體力），鉛筆的每一個面上都會寫著各種不同的指示，像是「對敵人造成40點傷害」，最後存活下來的玩家獲勝。","excerptB":""},{"targetId":"oKZc8ggoS7","targetType":102,"title":"パスモ | ぱすも","excerpt":"[名] PASMO是PASMO株式會社開始發行的鐵路、公共汽車通用的非接觸型IC卡車票"},{"targetId":"mmtFWpAvPs","targetType":102,"title":"ワザップ！ | わざっぷ ②","excerpt":"[名] 假情報；假消息 「Wazap!」是由東樑株式會社創立的一個網站，主要是以遊戲攻略經營的一個平台。 但因為這平台是每位成員都可以自由使用、編輯的，所以進而也導致有不少假消息或是假攻略，讓看攻略的人一直卡關。 從那時候開始，大家（尤其是VTuber）也會把假攻略或假消息說成ワザップ。"}]}}}}
+[22:18:54 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198937613","targetType":102,"title":"会社 | かいしゃ ⓪","excerpt":"[名] 公司"},{"targetId":"5pAGY6fxDX","targetType":102,"title":"バトル鉛筆 | ばとるえんぴつ ①⓪","excerpt":"[名]戰鬥鉛筆 此桌遊為艾尼克斯株式會社（現為史克威爾艾尼克斯株式會社）於1993年，沿用熱門RPG遊戲系列《勇者鬥惡龍》為基礎的滾鉛筆遊戲。 各個玩家一開始擁有100HP（生命值/體力），鉛筆的每一個面上都會寫著各種不同的指示，像是「對敵人造成40點傷害」，最後存活下來的玩家獲勝。","excerptB":""},{"targetId":"oKZc8ggoS7","targetType":102,"title":"パスモ | ぱすも","excerpt":"[名] PASMO是PASMO株式會社開始發行的鐵路、公共汽車通用的非接觸型IC卡車票"},{"targetId":"mmtFWpAvPs","targetType":102,"title":"ワザップ！ | わざっぷ ②","excerpt":"[名] 假情報；假消息 「Wazap!」是由東樑株式會社創立的一個網站，主要是以遊戲攻略經營的一個平台。 但因為這平台是每位成員都可以自由使用、編輯的，所以進而也導致有不少假消息或是假攻略，讓看攻略的人一直卡關。 從那時候開始，大家（尤其是VTuber）也會把假攻略或假消息說成ワザップ。"}]}}}}
+[22:18:58 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u6703\u793E"}'
+[22:18:59 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198937613","targetType":102,"title":"会社 | かいしゃ ⓪","excerpt":"[名] 公司"},{"targetId":"5pAGY6fxDX","targetType":102,"title":"バトル鉛筆 | ばとるえんぴつ ①⓪","excerpt":"[名]戰鬥鉛筆 此桌遊為艾尼克斯株式會社（現為史克威爾艾尼克斯株式會社）於1993年，沿用熱門RPG遊戲系列《勇者鬥惡龍》為基礎的滾鉛筆遊戲。 各個玩家一開始擁有100HP（生命值/體力），鉛筆的每一個面上都會寫著各種不同的指示，像是「對敵人造成40點傷害」，最後存活下來的玩家獲勝。","excerptB":""},{"targetId":"oKZc8ggoS7","targetType":102,"title":"パスモ | ぱすも","excerpt":"[名] PASMO是PASMO株式會社開始發行的鐵路、公共汽車通用的非接觸型IC卡車票"},{"targetId":"mmtFWpAvPs","targetType":102,"title":"ワザップ！ | わざっぷ ②","excerpt":"[名] 假情報；假消息 「Wazap!」是由東樑株式會社創立的一個網站，主要是以遊戲攻略經營的一個平台。 但因為這平台是每位成員都可以自由使用、編輯的，所以進而也導致有不少假消息或是假攻略，讓看攻略的人一直卡關。 從那時候開始，大家（尤其是VTuber）也會把假攻略或假消息說成ワザップ。"}]}}}}
+[22:19:24 INF] 应用程序关闭
+[22:19:30 INF] 应用程序启动
+[22:19:32 INF] 应用程序关闭
+[22:19:36 INF] 应用程序启动
+[22:19:46 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u91D1\u71D5"}'
+[22:19:47 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[]}}}}
+[22:19:53 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u4F60"}'
+[22:19:53 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"1989968","targetType":102,"title":"お前 | おまえ ⓪","excerpt":"[名] （男性用语）（对同辈或晚辈的称呼）你；神前，佛前；贵人面前"},{"targetId":"198942871","targetType":102,"title":"貴方 | あなた","excerpt":"[名] 您；你；你"},{"targetId":"198927417","targetType":102,"title":"ユー | ゆー","excerpt":"[惯用] you 你，您"},{"targetId":"1989894","targetType":102,"title":"お主 | おぬし ②","excerpt":"[代名] 你"},{"targetId":"198993022","targetType":102,"title":"汝 | なんじ ①⓪","excerpt":"[代名] 你；爾"}]}}}}
+[22:24:47 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u51C6\u5907"}'
+[22:24:48 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198966581","targetType":102,"title":"準備 | じゅんび ①","excerpt":"[名·サ变] 准备，预备；筹备"},{"targetId":"198976753","targetType":102,"title":"設ける | もうける ③","excerpt":"[他动·一段] 预备，准备；设置，设立；制定","excerptB":"[他动·二类] 预备，准备；设置，设立；制定"},{"targetId":"198998277","targetType":102,"title":"備える | そなえる ③②","excerpt":"[自他动·一段] 准备，防备；设置，备置，装置；具备，具有生与俱来生来就有","excerptB":"[自他动·二类] 准备，防备；设置，备置，装置；具备，具有生与俱来生来就有"},{"targetId":"198959838","targetType":102,"title":"支度 | したく ⓪","excerpt":"[名·サ变] （日常琐事的）准备，预备；打扮，整理穿戴；外出服"},{"targetId":"1989110041","targetType":102,"title":"用意 | ようい ①","excerpt":"[名·自他动·サ变] 准备，预备；注意；警惕，防备"}]}}}}
+[22:25:01 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u6548\u679C"}'
+[22:25:01 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198952553","targetType":102,"title":"効果 | こうか ①","excerpt":"[名] 效果功效成效成绩；效果在广播剧和戏剧等的演出时，使用拟声以增加观（听）众身临其境的感觉，提高演出效果也指其工作人员"},{"targetId":"19891142","targetType":102,"title":"甲斐 | かい ⓪","excerpt":"[名] 效果；价值；好处，用处；意义"},{"targetId":"19891152","targetType":102,"title":"効 | かい ⓪","excerpt":"[名] 效果，价值"},{"targetId":"1989110878","targetType":102,"title":"利き | きき ⓪","excerpt":"[名] 好使，能干；效果，效用"},{"targetId":"198952562","targetType":102,"title":"効力 | こうりょく ①","excerpt":"[名] 效力；效果；效验"}]}}}}
+[22:25:18 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u8B70\u5B85"}'
+[22:25:19 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[]}}}}
+[22:25:26 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u770C\u8B70\u5B85"}'
+[22:25:26 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"198949434","targetType":102,"title":"県議 | けんぎ","excerpt":"[名] 「県議会議員」の略"},{"targetId":"198949435","targetType":102,"title":"県議会 | けんぎかい ③","excerpt":"[名] 县议会"},{"targetId":"t1OMIsZHiI","targetType":102,"title":"県議会議員 | けんぎかいぎいん","excerpt":"[名] 県議会を構成する議員。県の住民から選挙され、任期は四年。県会議員。県議。"},{"targetId":"220120w109793","targetType":102,"title":"都道府県議会 | とどうふけんぎかい ⑦","excerpt":"[名] 都道府県の議決機関。都道府県住民の公選による議員により組織され，条例の制定・改廃・歳入歳出予算などに関する議決権のほか，行政監査権，知事の不信任議決権などを有する。"},{"targetId":"220120w110438","targetType":102,"title":"都道府県議会議員 | とどうふけんぎかいぎいん ⑩","excerpt":"[名] 都道府県議会の構成員。公職選挙法に基づき，都道府県住民の公選による。任期は四年。定数は人口に比例して定められる。"}]}}}}
+[22:26:01 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u304B\u307E\u3057\u305F\u3044"}'
+[22:26:02 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"220120w146137","targetType":102,"title":"ましたい | ましたい","excerpt":"[惯用] 〔助動詞「ます」の連用形「まし」に希望の助動詞「たい」の付いたもの。近世上方語〕 動作の及ぶ相手に対する敬意を表しつつ，その動作を希望する意を表す。「ます」は謙譲の助動詞。 → ます（助動）"},{"targetId":"19892371","targetType":102,"title":"したい | したい ⓪①","excerpt":"[名] 姿态，姿式"},{"targetId":"vZXd7nVFXt","targetType":102,"title":"かましし | かましし","excerpt":"[名] 「かもしか(羚羊)」の古名。"},{"targetId":"198952570","targetType":102,"title":"厚かましい | あつかましい ⑤","excerpt":"[形] 厚脸皮，不害羞，无耻"},{"targetId":"xBibpALeBS","targetType":102,"title":"たいした | たいした","excerpt":"[副词] たいそう。とても。"}]}}}}
+[22:26:23 INF] 发送请求
+CURL Command:
+curl 'https://api.mojidict.com/parse/functions/search-all' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: zh-CN, zh; q=0.9, en; q=0.8, zh-TW; q=0.7, ja; q=0.6' \
+  -H 'Origin: chrome-extension://edoiodnmpjehmemkkfmnefmkboeaahlf' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: none' \
+  -H 'User-Agent: Mozilla/5.0, (Windows NT 10.0; Win64; x64), AppleWebKit/537.36, (KHTML, like Gecko), Chrome/131.0.0.0, Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --data-raw '{"g_os":"webExtension","g_ver":"v4.7.6.20240313","_InstallationId":"7d959a18-48c4-243c-7486-632147466544","_ClientVersion":"js3.4.1","_ApplicationId":"E62VyFVLMiW7kvbtVq3p","types":[102],"text":"\u4E00\u767A\u304B\u307E\u3057\u305F\u3044"}'
+[22:26:23 INF] 收到响应
+状态码: "OK"
+响应内容: {"result":{"code":200,"result":{"word":{"searchResult":[{"targetId":"220120w146137","targetType":102,"title":"ましたい | ましたい","excerpt":"[惯用] 〔助動詞「ます」の連用形「まし」に希望の助動詞「たい」の付いたもの。近世上方語〕 動作の及ぶ相手に対する敬意を表しつつ，その動作を希望する意を表す。「ます」は謙譲の助動詞。 → ます（助動）"},{"targetId":"19892371","targetType":102,"title":"したい | したい ⓪①","excerpt":"[名] 姿态，姿式"},{"targetId":"vZXd7nVFXt","targetType":102,"title":"かましし | かましし","excerpt":"[名] 「かもしか(羚羊)」の古名。"},{"targetId":"198952570","targetType":102,"title":"厚かましい | あつかましい ⑤","excerpt":"[形] 厚脸皮，不害羞，无耻"},{"targetId":"xBibpALeBS","targetType":102,"title":"たいした | たいした","excerpt":"[副词] たいそう。とても。"}]}}}}
