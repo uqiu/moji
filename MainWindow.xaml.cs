@@ -437,7 +437,7 @@ namespace moji
                         var flowDoc = new FlowDocument();
                         
                         // 添加查询内容
-                        var queryPara = new Paragraph(new Run($"��询内容: {clipboardText}") { FontWeight = FontWeights.Bold });
+                        var queryPara = new Paragraph(new Run($"Word: {clipboardText}") { FontWeight = FontWeights.Bold });
                         queryPara.Margin = new Thickness(0, 0, 0, 10);
                         flowDoc.Blocks.Add(queryPara);
 
