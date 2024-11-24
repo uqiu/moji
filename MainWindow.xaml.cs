@@ -23,15 +23,34 @@ using WpfApplication = System.Windows.Application;
 using System.Collections.Generic;  // 添加 Dictionary 支持
 using Serilog;
 using DotNetEnv; // 添加这行
-using MediaColorConverter = System.Windows.Media.ColorConverter;  // 添加�� using 区域
+using MediaColorConverter = System.Windows.Media.ColorConverter;  // 添加在 using 区域
 using WpfRichTextBox = System.Windows.Controls.RichTextBox;  // 添加这行
 using WpfTabControl = System.Windows.Controls.TabControl;    // 添加这行
 using WinFormsRichTextBox = System.Windows.Forms.RichTextBox; // 添加这行
 using WinFormsDataFormats = System.Windows.Forms.DataFormats;  // 添加这行
 using WpfDataFormats = System.Windows.DataFormats;  // 添加这行
+using System.Globalization;
+using System.Windows.Data;
 
 namespace moji
 {
+    public class SubtractValueConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is double screenWidth && double.TryParse(parameter?.ToString(), out double subtractValue))
+            {
+                return screenWidth - subtractValue;
+            }
+            return 0;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -97,7 +116,7 @@ namespace moji
                 ShadowColor = (MediaColor)MediaColorConverter.ConvertFromString(shadowColor);
 
                 InitializeNotifyIcon(); // 添加初始化托盘图标
-                this.Deactivated += MainWindow_Deactivated; // ��加失去焦点事件处理
+                this.Deactivated += MainWindow_Deactivated; // 添加失去焦点事件处理
                 this.Hide(); // 启动时隐藏主窗口
 
                 var builder = new ConfigurationBuilder()
@@ -129,7 +148,7 @@ namespace moji
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
-            this.ShowInTaskbar = false; // 在��务栏不显示图标
+            this.ShowInTaskbar = false; // 在任务栏不显示图标
             
             // 确保先注销已存在的热键
             var helper = new WindowInteropHelper(this);

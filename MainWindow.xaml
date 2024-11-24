@@ -5,22 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:moji"
         xmlns:interop="clr-namespace:Walterlv.Demo.Interop"
-        mc:Ignorable="d"
-        Title="Moji Dict" Height="450" Width="800"
-        Background="Transparent"
-        WindowStyle="None"
-        AllowsTransparency="True"
-        ResizeMode="CanResize"
-        interop:WindowBlur.IsEnabled="True">
+        mc:Ignorable="d">
     
-    <WindowChrome.WindowChrome>
-        <WindowChrome 
-            GlassFrameThickness="-1"
-            ResizeBorderThickness="5"
-            CaptionHeight="0"/>
-    </WindowChrome.WindowChrome>
-
     <Window.Resources>
+        <local:SubtractValueConverter x:Key="SubtractValueConverter"/>
         <Style x:Key="ModernScrollViewer" TargetType="{x:Type ScrollViewer}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -40,7 +28,7 @@
             <Setter Property="Padding" Value="0"/>
         </Style>
         
-        <!-- 添加TabItem样式 -->
+        <!-- 添加TabItem样式（删除重复的定义，只保留这一个） -->
         <Style TargetType="TabItem">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
@@ -81,6 +69,28 @@
         </Style>
     </Window.Resources>
     
+    <!-- 现在设置窗口属性 -->
+    <Window.Style>
+        <Style TargetType="Window">
+            <Setter Property="Title" Value="Moji Dict"/>
+            <Setter Property="Width" Value="700"/>
+            <Setter Property="Height" Value="{x:Static SystemParameters.PrimaryScreenHeight}"/>
+            <Setter Property="Left" Value="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}, 
+                    Converter={StaticResource SubtractValueConverter}, ConverterParameter=700}"/>
+            <Setter Property="Top" Value="0"/>
+            <Setter Property="Topmost" Value="True"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="WindowStyle" Value="None"/>
+        </Style>
+    </Window.Style>
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+            GlassFrameThickness="-1"
+            ResizeBorderThickness="5"
+            CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+
     <!-- 设置边框和阴影 -->
     <!-- 窗口背景色，E0表示88%不透明度 -->
     <Border CornerRadius="0" 
@@ -138,6 +148,7 @@
                     </TabItem>
                 </TabControl>
             </ScrollViewer>
+
         </Grid>
     </Border>
 </Window>
