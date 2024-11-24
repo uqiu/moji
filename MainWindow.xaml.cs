@@ -524,7 +524,7 @@ namespace moji
             // 获取环境变量中的颜色设置
             string defaultTextColor = Env.GetString("UI_DEFAULT_TEXT_COLOR") ?? "#CCCCCC";
             string titleColor = Env.GetString("UI_TITLE_COLOR") ?? "#2196F3";
-            string contentColor = Env.GetString("UI_CONTENT_COLOR") ?? "#FFFFFF";
+            string contentColor = Env.GetString("UI_CONTENT_COLOR") ?? "#999999";
             string secondaryColor = Env.GetString("UI_SECONDARY_COLOR") ?? "#999999";
             
             foreach (var block in flowDoc.Blocks)

@@ -36,7 +36,8 @@
             <Setter Property="Foreground" Value="#CCCCCC"/>
             <Style.Triggers>
                 <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Foreground" Value="#FFFFFF"/>
+                    <Setter Property="Foreground" Value="#999999"/>
+                    <Setter Property="Background" Value="#303030"/>  <!-- 将颜色改为更深的灰色 -->
                 </Trigger>
             </Style.Triggers>
         </Style>
