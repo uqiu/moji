@@ -115,48 +115,52 @@
             <Rectangle Grid.Row="0" Fill="Transparent" MouseLeftButtonDown="DragWindow"/>
             
             <!-- 内容区域 -->
-            <ScrollViewer Grid.Row="1" 
-                         Margin="20,12,20,20"
-                         Style="{StaticResource ModernScrollViewer}"
-                         VerticalScrollBarVisibility="Auto" 
-                         HorizontalScrollBarVisibility="Disabled">
+            <Grid Grid.Row="1" Margin="20,12,20,20">
                 <TabControl x:Name="TabControl" Margin="10,10,10,10"
                           VirtualizingStackPanel.IsVirtualizing="True"
                           VirtualizingStackPanel.VirtualizationMode="Recycling">
                     <TabItem Header="词汇">
-                        <RichTextBox x:Name="VocabularyTextBox" 
-                                    IsReadOnly="True"
-                                    BorderThickness="0"
-                                    Background="Transparent"
-                                    HorizontalAlignment="Stretch"
-                                    MaxWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=TabControl}, Path=ActualWidth}"
-                                    TextOptions.TextFormattingMode="Display"
-                                    CacheMode="BitmapCache">
-                            <FlowDocument PageWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=RichTextBox}, Path=ActualWidth}"
+                        <ScrollViewer Style="{StaticResource ModernScrollViewer}"
+                                    VerticalScrollBarVisibility="Auto" 
+                                    HorizontalScrollBarVisibility="Disabled">
+                            <RichTextBox x:Name="VocabularyTextBox" 
+                                        IsReadOnly="True"
+                                        BorderThickness="0"
+                                        Background="Transparent"
+                                        HorizontalAlignment="Stretch"
+                                        MaxWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=TabControl}, Path=ActualWidth}"
+                                        TextOptions.TextFormattingMode="Display"
+                                        CacheMode="BitmapCache">
+                                <FlowDocument PageWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=RichTextBox}, Path=ActualWidth}"
                                           LineHeight="1.5"
                                           TextAlignment="Left">
-                                <Paragraph/>
-                            </FlowDocument>
-                        </RichTextBox>
+                                    <Paragraph/>
+                                </FlowDocument>
+                            </RichTextBox>
+                        </ScrollViewer>
                     </TabItem>
                     <TabItem Header="例句">
-                        <RichTextBox x:Name="ExamplesTextBox"
-                                    IsReadOnly="True"
-                                    BorderThickness="0"
-                                    Background="Transparent"
-                                    HorizontalAlignment="Stretch"
-                                    MaxWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=TabControl}, Path=ActualWidth}"
-                                    TextOptions.TextFormattingMode="Display"
-                                    CacheMode="BitmapCache">
-                            <FlowDocument PageWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=RichTextBox}, Path=ActualWidth}"
+                        <ScrollViewer Style="{StaticResource ModernScrollViewer}"
+                                    VerticalScrollBarVisibility="Auto" 
+                                    HorizontalScrollBarVisibility="Disabled">
+                            <RichTextBox x:Name="ExamplesTextBox"
+                                        IsReadOnly="True"
+                                        BorderThickness="0"
+                                        Background="Transparent"
+                                        HorizontalAlignment="Stretch"
+                                        MaxWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=TabControl}, Path=ActualWidth}"
+                                        TextOptions.TextFormattingMode="Display"
+                                        CacheMode="BitmapCache">
+                                <FlowDocument PageWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=RichTextBox}, Path=ActualWidth}"
                                           LineHeight="1.5"
                                           TextAlignment="Left">
-                                <Paragraph/>
-                            </FlowDocument>
-                        </RichTextBox>
+                                    <Paragraph/>
+                                </FlowDocument>
+                            </RichTextBox>
+                        </ScrollViewer>
                     </TabItem>
                 </TabControl>
-            </ScrollViewer>
+            </Grid>
 
         </Grid>
     </Border>
