@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;  // 添加这个引用
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;  // 添加这行
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,7 +23,12 @@ using WpfApplication = System.Windows.Application;
 using System.Collections.Generic;  // 添加 Dictionary 支持
 using Serilog;
 using DotNetEnv; // 添加这行
-using MediaColorConverter = System.Windows.Media.ColorConverter;  // 添加到 using 区域
+using MediaColorConverter = System.Windows.Media.ColorConverter;  // 添加�� using 区域
+using WpfRichTextBox = System.Windows.Controls.RichTextBox;  // 添加这行
+using WpfTabControl = System.Windows.Controls.TabControl;    // 添加这行
+using WinFormsRichTextBox = System.Windows.Forms.RichTextBox; // 添加这行
+using WinFormsDataFormats = System.Windows.Forms.DataFormats;  // 添加这行
+using WpfDataFormats = System.Windows.DataFormats;  // 添加这行
 
 namespace moji
 {
@@ -62,8 +68,21 @@ namespace moji
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        // 添加取消令牌源
+        private CancellationTokenSource? _currentRequestCts;
+        private string _lastSearchText = string.Empty;
+
+        // 添加缓存字段
+        private string _cachedSearchText;
+        private FlowDocument _cachedVocabularyDoc;
+        private FlowDocument _cachedExamplesDoc;
+
         public MainWindow()
         {
+            _cachedSearchText = string.Empty;
+            _cachedVocabularyDoc = null;
+            _cachedExamplesDoc = null;
+
             try
             {
                 InitializeComponent();
@@ -96,6 +115,9 @@ namespace moji
                     
                 _logger = Log.Logger;
                 _logger.Information("应用程序启动");
+
+                // 添加标签页切换事件处理
+                TabControl.SelectionChanged += TabControl_SelectionChanged;
             }
             catch (Exception ex)
             {
@@ -251,7 +273,8 @@ namespace moji
                     var errorDoc = new FlowDocument(new Paragraph(
                         new Run($"发生错误: {ex.Message}")
                     ));
-                    UpdateResultTextBox(errorDoc);
+                    UpdateResultTextBox(errorDoc, VocabularyTextBox);
+                    UpdateResultTextBox(errorDoc, ExamplesTextBox);
                     Show();
                     Activate();
                 });
@@ -269,20 +292,46 @@ namespace moji
                     WindowState = WindowState.Normal;
                     Activate();
                     
-                    var loadingDoc = new FlowDocument(new Paragraph(
-                        new Run("正在查询...")
-                    ));
-                    UpdateResultTextBox(loadingDoc);
-                    
                     var clipboardText = System.Windows.Clipboard.GetText();
-                    await SendHttpRequest(clipboardText);
+
+                    // 如果内容没变且缓存存在，创建新的 FlowDocument 副本
+                    if (clipboardText == _cachedSearchText && 
+                        _cachedVocabularyDoc != null && 
+                        _cachedExamplesDoc != null)
+                    {
+                        VocabularyTextBox.Document = CloneFlowDocument(_cachedVocabularyDoc);
+                        ExamplesTextBox.Document = CloneFlowDocument(_cachedExamplesDoc);
+                        return;
+                    }
+
+                    _lastSearchText = clipboardText;
+
+                    // 取消之前的请求
+                    _currentRequestCts?.Cancel();
+                    _currentRequestCts = new CancellationTokenSource();
+
+                    // 显示加载提示 - 为每个文本框创建独立的 Document
+                    VocabularyTextBox.Document = new FlowDocument(new Paragraph(new Run("正在查询...")));
+                    ExamplesTextBox.Document = new FlowDocument(new Paragraph(new Run("正在查询...")));
+                    
+                    // 同时发送两个请求
+                    await Task.WhenAll(
+                        SendHttpRequest(clipboardText, VocabularyTextBox, 102, _currentRequestCts.Token),
+                        SendHttpRequest(clipboardText, ExamplesTextBox, 103, _currentRequestCts.Token)
+                    );
+
+                    // 缓存新的搜索结果
+                    _cachedSearchText = clipboardText;
+                    _cachedVocabularyDoc = CloneFlowDocument(VocabularyTextBox.Document);
+                    _cachedExamplesDoc = CloneFlowDocument(ExamplesTextBox.Document);
                 }
                 else
                 {
-                    var noContentDoc = new FlowDocument(new Paragraph(
-                        new Run("剪切板没有文本内容")
-                    ));
-                    UpdateResultTextBox(noContentDoc);
+                    // 为每个文本框创建新的实例
+                    var noContentDoc1 = new FlowDocument(new Paragraph(new Run("剪切板没有文本内容")));
+                    var noContentDoc2 = new FlowDocument(new Paragraph(new Run("剪切板没有文本内容")));
+                    VocabularyTextBox.Document = noContentDoc1;
+                    ExamplesTextBox.Document = noContentDoc2;
                     Show();
                     Activate();
                 }
@@ -290,16 +339,41 @@ namespace moji
             }
             catch (Exception ex)
             {
-                var errorDoc = new FlowDocument(new Paragraph(
-                    new Run($"处理剪贴板内容时发生错误: {ex.Message}")
-                ));
-                UpdateResultTextBox(errorDoc);
+                // 为每个文本框创建新的实例
+                var errorDoc1 = new FlowDocument(new Paragraph(new Run($"处理剪贴板内容时发生错误: {ex.Message}")));
+                var errorDoc2 = new FlowDocument(new Paragraph(new Run($"处理剪贴板内容时发生错误: {ex.Message}")));
+                VocabularyTextBox.Document = errorDoc1;
+                ExamplesTextBox.Document = errorDoc2;
                 Show();
                 Activate();
             }
         }
 
-        private async Task SendHttpRequest(string clipboardText)
+        private async void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(_lastSearchText)) return;
+
+            var selectedTab = TabControl.SelectedItem as TabItem;
+            if (selectedTab == null) return;
+
+            var targetTextBox = selectedTab.Header.ToString() == "词汇" ? VocabularyTextBox : ExamplesTextBox;
+            var cachedDoc = selectedTab.Header.ToString() == "词汇" ? _cachedVocabularyDoc : _cachedExamplesDoc;
+
+            // 如果有缓存，创建新的 Document 副本
+            if (cachedDoc != null)
+            {
+                targetTextBox.Document = CloneFlowDocument(cachedDoc);
+                return;
+            }
+
+            // 如果没有缓存，创建新的提示文档
+            targetTextBox.Document = new FlowDocument(new Paragraph(new Run("请重新查询获取内容")));
+        }
+
+        private TabItem? CurrentTab => ((WpfTabControl)FindName("TabControl"))?.SelectedItem as TabItem;
+        private WpfRichTextBox? CurrentTextBox => CurrentTab?.Header.ToString() == "词汇" ? VocabularyTextBox : ExamplesTextBox;
+
+        private async Task SendHttpRequest(string clipboardText, WpfRichTextBox targetTextBox, int type, CancellationToken cancellationToken = default)
         {
             try
             {
@@ -329,7 +403,7 @@ namespace moji
                         _InstallationId = Env.GetString("REQUEST_INSTALLATION_ID"),
                         _ClientVersion = Env.GetString("REQUEST_CLIENT_VERSION"),
                         _ApplicationId = Env.GetString("REQUEST_APPLICATION_ID"),
-                        types = new[] { 102 },
+                        types = new[] { type },
                         text = clipboardText
                     };
 
@@ -344,8 +418,8 @@ namespace moji
                     _logger.Information("发送请求\nCURL Command:\n{CurlCommand}", 
                         GenerateCurlCommand(url, client.DefaultRequestHeaders, jsonContent));
 
-                    var response = await client.PostAsync(url, requestContent);
-                    var responseContent = await response.Content.ReadAsStringAsync();
+                    var response = await client.PostAsync(url, requestContent, cancellationToken);
+                    var responseContent = await response.Content.ReadAsStringAsync(cancellationToken);
 
                     // 记录响应详情
                     _logger.Information("收到响应\n状态码: {StatusCode}\n响应内容: {Response}", 
@@ -357,13 +431,13 @@ namespace moji
                         var searchResults = jsonResponse.RootElement
                             .GetProperty("result")
                             .GetProperty("result")
-                            .GetProperty("word")
+                            .GetProperty(type == 102 ? "word" : "example")
                             .GetProperty("searchResult");
 
                         var flowDoc = new FlowDocument();
                         
                         // 添加查询内容
-                        var queryPara = new Paragraph(new Run($"查询内容: {clipboardText}") { FontWeight = FontWeights.Bold });
+                        var queryPara = new Paragraph(new Run($"��询内容: {clipboardText}") { FontWeight = FontWeights.Bold });
                         queryPara.Margin = new Thickness(0, 0, 0, 10);
                         flowDoc.Blocks.Add(queryPara);
 
@@ -381,23 +455,28 @@ namespace moji
                             flowDoc.Blocks.Add(para);
                         }
 
-                        UpdateResultTextBox(flowDoc);
+                        UpdateResultTextBox(flowDoc, targetTextBox);
                     }
                     else 
                     {
                         var errorDoc = new FlowDocument(new Paragraph(
                             new Run($"请求失败: {response.StatusCode}\n{responseContent}")
                         ));
-                        UpdateResultTextBox(errorDoc);
+                        UpdateResultTextBox(errorDoc, targetTextBox);
                     }
                 }
+            }
+            // 添加取消异常处理
+            catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+            {
+                throw;  // 重新抛出取消异常
             }
             catch (Exception ex)
             {
                 var errorDoc = new FlowDocument(new Paragraph(
                     new Run($"发送请求时发生错误: {ex.Message}")
                 ));
-                UpdateResultTextBox(errorDoc);
+                UpdateResultTextBox(errorDoc, targetTextBox);
                 _logger.Error(ex, "发送请求时发生错误");
             }
         }
@@ -414,64 +493,55 @@ namespace moji
             return curlCommand;
         }
 
-        private void UpdateResultTextBox(FlowDocument flowDoc)
+        private void UpdateResultTextBox(FlowDocument flowDoc, WpfRichTextBox textBox)
         {
-            ResultTextBox.Document = flowDoc;
-            string defaultTextColor = Env.GetString("UI_DEFAULT_TEXT_COLOR") ?? "#999999";
+            // 设置文档级别的样式
+            flowDoc.PagePadding = new Thickness(0);
+            flowDoc.TextAlignment = TextAlignment.Left;
+            
+            // 更新文档内容
+            textBox.Document = flowDoc;
+            
+            // 获取环境变量中的颜色设置
+            string defaultTextColor = Env.GetString("UI_DEFAULT_TEXT_COLOR") ?? "#CCCCCC";
+            string titleColor = Env.GetString("UI_TITLE_COLOR") ?? "#2196F3";
+            string contentColor = Env.GetString("UI_CONTENT_COLOR") ?? "#FFFFFF";
+            string secondaryColor = Env.GetString("UI_SECONDARY_COLOR") ?? "#999999";
             
             foreach (var block in flowDoc.Blocks)
             {
                 if (block is Paragraph para)
                 {
-                    // 设置段落默认文本颜色
-                    para.Foreground = new SolidColorBrush(
-                        (MediaColor)MediaColorConverter.ConvertFromString(defaultTextColor));
-
-                    if (para.Inlines.FirstInline is Run titleRun && titleRun.FontWeight == FontWeights.Bold)
+                    // 设置段落样式
+                    para.Margin = new Thickness(0, 0, 0, 10);
+                    para.LineHeight = 1.5;
+                    
+                    // 设置文本样式
+                    foreach (var inline in para.Inlines)
                     {
-                        // 主要词（标题）样式
-                        string titleColor = Env.GetString("UI_TITLE_COLOR") ?? "#2196F3";
-                        titleRun.Foreground = new SolidColorBrush(
-                            (MediaColor)MediaColorConverter.ConvertFromString(titleColor));
-                        titleRun.FontSize = 16;
-                    }
-                    else
-                    {
-                        bool isFirst = true;
-                        foreach (var inline in para.Inlines)
+                        if (inline is Run run)
                         {
-                            if (inline is Run run)
+                            if (run.FontWeight == FontWeights.Bold)
                             {
-                                string color;
-                                if (isFirst && run.FontWeight == FontWeights.Bold)
-                                {
-                                    // 词条样式
-                                    color = Env.GetString("UI_CONTENT_COLOR") ?? "#333333";
-                                }
-                                else if (run.Text.Trim().Length > 0)  // 只为非空文本设置颜色
-                                {
-                                    // 释义样式
-                                    color = Env.GetString("UI_SECONDARY_COLOR") ?? "#666666";
-                                }
-                                else
-                                {
-                                    // 使用默认颜色
-                                    color = defaultTextColor;
-                                }
-                                
+                                // 标题文本
                                 run.Foreground = new SolidColorBrush(
-                                    (MediaColor)MediaColorConverter.ConvertFromString(color));
+                                    (MediaColor)MediaColorConverter.ConvertFromString(titleColor));
+                                run.FontSize = 16;
+                            }
+                            else
+                            {
+                                // 普通文本
+                                run.Foreground = new SolidColorBrush(
+                                    (MediaColor)MediaColorConverter.ConvertFromString(contentColor));
                                 run.FontSize = 14;
-                                isFirst = false;
                             }
                         }
                     }
                 }
             }
-            
-            // 确保滚动条始终隐藏
-            ResultTextBox.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
-            ResultTextBox.HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden;
+
+            // 强制重新渲染
+            textBox.InvalidateVisual();
         }
 
         private void DragWindow(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -499,5 +569,20 @@ namespace moji
         // 添加 UnregisterHotKey 导入
         [DllImport("user32.dll")]
         private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+
+        // 添加 FlowDocument 克隆方法
+        private FlowDocument CloneFlowDocument(FlowDocument source)
+        {
+            var memoryStream = new MemoryStream();
+            var range = new TextRange(source.ContentStart, source.ContentEnd);
+            range.Save(memoryStream, WpfDataFormats.Xaml);
+            
+            var newDocument = new FlowDocument();
+            var newRange = new TextRange(newDocument.ContentStart, newDocument.ContentEnd);
+            memoryStream.Seek(0, SeekOrigin.Begin);
+            newRange.Load(memoryStream, WpfDataFormats.Xaml);
+            
+            return newDocument;
+        }
     }
 }
