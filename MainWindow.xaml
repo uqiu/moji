@@ -114,16 +114,16 @@
         </Border.Effect>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="15"/>  <!-- 顶部拖拽区域 -->
+                <RowDefinition Height="0"/>  <!-- 顶部拖拽区域 -->
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             
             <!-- 顶部拖拽区域 - 透明但可拖拽 -->
             <Rectangle Grid.Row="0" Fill="Transparent" MouseLeftButtonDown="DragWindow"/>
             
-            <!-- 内容区域 -->
-            <Grid Grid.Row="1" Margin="20,12,20,20">
-                <TabControl x:Name="TabControl" Margin="10,10,10,10"
+            <!-- 内容区域：将 Margin 从 20,12,20,20 改为 10,6,10,10 -->
+            <Grid Grid.Row="1" Margin="6,3,6,6">
+                <TabControl x:Name="TabControl" Margin="5,5,5,5"
                           VirtualizingStackPanel.IsVirtualizing="True"
                           VirtualizingStackPanel.VirtualizationMode="Recycling">
                     <TabItem Header="词汇">
