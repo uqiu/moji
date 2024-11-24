@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:moji"
         xmlns:interop="clr-namespace:Walterlv.Demo.Interop"
-        mc:Ignorable="d">
-    
+        mc:Ignorable="d"
+        Title="Moji Dict"
+        Background="Transparent"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="CanResize"
+        interop:WindowBlur.IsEnabled="True">
+
     <Window.Resources>
         <local:SubtractValueConverter x:Key="SubtractValueConverter"/>
         <Style x:Key="ModernScrollViewer" TargetType="{x:Type ScrollViewer}">
