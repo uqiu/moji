@@ -41,7 +41,7 @@
             </Style.Triggers>
         </Style>
 
-        <!-- 添加RichTextBox样式 -->
+        <!-- 修改 RichTextBox 样式，移除错误的 TextWrapping 属性 -->
         <Style TargetType="RichTextBox">
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Background" Value="Transparent"/>
@@ -53,6 +53,7 @@
             <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
             <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
             <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+            <!-- 删除 TextWrapping 属性 -->
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="RichTextBox">
@@ -117,8 +118,8 @@
             <ScrollViewer Grid.Row="1" 
                          Margin="20,12,20,20"
                          Style="{StaticResource ModernScrollViewer}"
-                         VerticalScrollBarVisibility="Hidden" 
-                         HorizontalScrollBarVisibility="Hidden">
+                         VerticalScrollBarVisibility="Auto" 
+                         HorizontalScrollBarVisibility="Disabled">
                 <TabControl x:Name="TabControl" Margin="10,10,10,10"
                           VirtualizingStackPanel.IsVirtualizing="True"
                           VirtualizingStackPanel.VirtualizationMode="Recycling">
@@ -131,7 +132,11 @@
                                     MaxWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=TabControl}, Path=ActualWidth}"
                                     TextOptions.TextFormattingMode="Display"
                                     CacheMode="BitmapCache">
-                            <FlowDocument PageWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=RichTextBox}, Path=ActualWidth}"/>
+                            <FlowDocument PageWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=RichTextBox}, Path=ActualWidth}"
+                                          LineHeight="1.5"
+                                          TextAlignment="Left">
+                                <Paragraph/>
+                            </FlowDocument>
                         </RichTextBox>
                     </TabItem>
                     <TabItem Header="例句">
@@ -143,7 +148,11 @@
                                     MaxWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=TabControl}, Path=ActualWidth}"
                                     TextOptions.TextFormattingMode="Display"
                                     CacheMode="BitmapCache">
-                            <FlowDocument PageWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=RichTextBox}, Path=ActualWidth}"/>
+                            <FlowDocument PageWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=RichTextBox}, Path=ActualWidth}"
+                                          LineHeight="1.5"
+                                          TextAlignment="Left">
+                                <Paragraph/>
+                            </FlowDocument>
                         </RichTextBox>
                     </TabItem>
                 </TabControl>
