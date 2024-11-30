@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;  // 添加这行
 using System.Net.Http;
 using System.Net.Http.Headers;  // 添加这个引用
 using System.Runtime.InteropServices;
@@ -301,6 +302,20 @@ namespace moji
             return IntPtr.Zero;
         }
 
+        // 添加新方法用于检查文本是否包含汉字或日文字符
+        private bool ContainsJapaneseOrChinese(string text)
+        {
+            if (string.IsNullOrEmpty(text)) return false;
+
+            // 日文平假名范围：3040-309F
+            // 日文片假名范围：30A0-30FF
+            // 汉字基本范围：4E00-9FAF
+            return text.Any(c => 
+                (c >= '\u3040' && c <= '\u309F') ||  // 平假名
+                (c >= '\u30A0' && c <= '\u30FF') ||  // 片假名
+                (c >= '\u4E00' && c <= '\u9FAF'));   // 汉字
+        }
+
         private async void ShowClipboardContent()
         {
             try
@@ -312,6 +327,17 @@ namespace moji
                     Activate();
                     
                     var clipboardText = System.Windows.Clipboard.GetText();
+
+                    // 添加日文/汉字检查
+                    if (!ContainsJapaneseOrChinese(clipboardText))
+                    {
+                        var notJapaneseDoc = new FlowDocument(new Paragraph(
+                            new Run("剪贴板内容不包含日文或汉字") { FontWeight = FontWeights.Bold }
+                        ));
+                        VocabularyTextBox.Document = notJapaneseDoc;
+                        ExamplesTextBox.Document = CloneFlowDocument(notJapaneseDoc);
+                        return;
+                    }
 
                     // 如果内容没变且缓存存在，创建新的 FlowDocument 副本
                     if (clipboardText == _cachedSearchText && 
