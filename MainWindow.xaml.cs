@@ -97,6 +97,10 @@ namespace moji
         private FlowDocument _cachedVocabularyDoc;
         private FlowDocument _cachedExamplesDoc;
 
+        // 在class MainWindow开头添加DEEPL API相关常量
+        private const string DEEPL_API_URL = "https://api-free.deepl.com/v2/translate";
+        private string DEEPL_API_KEY => Env.GetString("DEEPL_API_KEY");
+
         public MainWindow()
         {
             _cachedSearchText = string.Empty;
@@ -328,15 +332,48 @@ namespace moji
                     
                     var clipboardText = System.Windows.Clipboard.GetText();
 
-                    // 添加日文/汉字检查
+                    // 修改这部分判断逻辑
                     if (!ContainsJapaneseOrChinese(clipboardText))
                     {
-                        var notJapaneseDoc = new FlowDocument(new Paragraph(
-                            new Run("剪贴板内容不包含日文或汉字") { FontWeight = FontWeights.Bold }
+                        // 显示翻译中提示
+                        var loadingDoc = new FlowDocument(new Paragraph(
+                            new Run("正在翻译...") { FontWeight = FontWeights.Bold }
                         ));
-                        VocabularyTextBox.Document = notJapaneseDoc;
-                        ExamplesTextBox.Document = CloneFlowDocument(notJapaneseDoc);
-                        return;
+                        VocabularyTextBox.Document = loadingDoc;
+                        ExamplesTextBox.Document = CloneFlowDocument(loadingDoc);
+
+                        try 
+                        {
+                            // 调用DEEPL API翻译
+                            string translatedText = await TranslateWithDeepL(clipboardText);
+                            
+                            var translationDoc = new FlowDocument();
+                            
+                            // 添加原文
+                            var originalPara = new Paragraph(new Run("原文: ") { FontWeight = FontWeights.Bold });
+                            originalPara.Inlines.Add(new Run(clipboardText));
+                            originalPara.Margin = new Thickness(0, 0, 0, 10);
+                            translationDoc.Blocks.Add(originalPara);
+                            
+                            // 添加译文
+                            var translatedPara = new Paragraph(new Run("译文: ") { FontWeight = FontWeights.Bold });
+                            translatedPara.Inlines.Add(new Run(translatedText));
+                            translatedPara.Margin = new Thickness(0, 0, 0, 10);
+                            translationDoc.Blocks.Add(translatedPara);
+
+                            VocabularyTextBox.Document = translationDoc;
+                            ExamplesTextBox.Document = CloneFlowDocument(translationDoc);
+                            return;
+                        }
+                        catch (Exception ex)
+                        {
+                            var errorDoc = new FlowDocument(new Paragraph(
+                                new Run($"翻译失败: {ex.Message}") { FontWeight = FontWeights.Bold }
+                            ));
+                            VocabularyTextBox.Document = errorDoc;
+                            ExamplesTextBox.Document = CloneFlowDocument(errorDoc);
+                            return;
+                        }
                     }
 
                     // 如果内容没变且缓存存在，创建新的 FlowDocument 副本
@@ -391,6 +428,39 @@ namespace moji
                 ExamplesTextBox.Document = errorDoc2;
                 Show();
                 Activate();
+            }
+        }
+
+        // 添加DEEPL翻译方法
+        private async Task<string> TranslateWithDeepL(string text)
+        {
+            if (string.IsNullOrEmpty(DEEPL_API_KEY))
+            {
+                throw new Exception("未设置DEEPL_API_KEY环境变量");
+            }
+
+            using (var client = new HttpClient())
+            {
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("auth_key", DEEPL_API_KEY),
+                    new KeyValuePair<string, string>("text", text),
+                    new KeyValuePair<string, string>("target_lang", "ZH"),
+                });
+
+                var response = await client.PostAsync(DEEPL_API_URL, content);
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception($"DEEPL API请求失败: {response.StatusCode}\n{responseContent}");
+                }
+
+                var jsonResponse = System.Text.Json.JsonDocument.Parse(responseContent);
+                return jsonResponse.RootElement
+                    .GetProperty("translations")[0]
+                    .GetProperty("text")
+                    .GetString();
             }
         }
 
