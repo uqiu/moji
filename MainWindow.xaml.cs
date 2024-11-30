@@ -22,7 +22,6 @@ using MessageBox = System.Windows.MessageBox;  // 添加在文件开头的 using
 using WinFormsApplication = System.Windows.Forms.Application;
 using WpfApplication = System.Windows.Application;
 using System.Collections.Generic;  // 添加 Dictionary 支持
-using Serilog;
 using DotNetEnv; // 添加这行
 using moji.Services;  // 添加这行
 using MediaColorConverter = System.Windows.Media.ColorConverter;  // 添加在 using 区域
@@ -62,7 +61,6 @@ namespace moji
         private HwndSource? _source;  // 添加字段保存 source 引用
         private readonly IConfiguration _configuration;
         public NotifyIcon? notifyIcon;  // 改为 public
-        private readonly ILogger _logger;
 
         private SolidColorBrush _borderBrush;
         private MediaColor _shadowColor;  // 修改这里
@@ -133,19 +131,8 @@ namespace moji
                     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
                 _configuration = builder.Build();
 
-                // 配置日志
-                Log.Logger = new LoggerConfiguration()
-                    .MinimumLevel.Debug()
-                    .WriteTo.File("logs/moji_.log", 
-                        rollingInterval: RollingInterval.Day,
-                        outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
-                    .CreateLogger();
-                    
-                _logger = Log.Logger;
-                _logger.Information("应用程序启动");
-
                 // 初始化数据库服务
-                _databaseService = new DatabaseService(_logger);
+                _databaseService = new DatabaseService();
 
                 // 添加标签页切换事件处理
                 TabControl.SelectionChanged += TabControl_SelectionChanged;
@@ -162,7 +149,7 @@ namespace moji
             base.OnSourceInitialized(e);
             this.ShowInTaskbar = false; // 在任务栏不显示图标
             
-            // 确保��注销已存在的热键
+            // 确保注销已存在的热键
             var helper = new WindowInteropHelper(this);
             UnregisterHotKey(helper.Handle, HOTKEY_ID);
             
@@ -274,8 +261,6 @@ namespace moji
             var helper = new WindowInteropHelper(this);
             UnregisterHotKey(helper.Handle, HOTKEY_ID);
             
-            _logger.Information("应用程序关闭");
-            Log.CloseAndFlush();
             base.OnClosed(e);
         }
 
@@ -417,7 +402,7 @@ namespace moji
                 else
                 {
                     // 为每个文本框创建新的实例
-                    var noContentDoc1 = new FlowDocument(new Paragraph(new Run("剪切板没有文本内���")));
+                    var noContentDoc1 = new FlowDocument(new Paragraph(new Run("剪切板没有文本内容")));
                     var noContentDoc2 = new FlowDocument(new Paragraph(new Run("剪切板没有文本内容")));
                     VocabularyTextBox.Document = noContentDoc1;
                     ExamplesTextBox.Document = noContentDoc2;
@@ -476,7 +461,6 @@ namespace moji
                 }
                 catch (Exception ex)
                 {
-                    _logger.Error(ex, "保存翻译记录失败");
                     // 不抛出异常，继续返回翻译结果
                 }
 
@@ -547,18 +531,8 @@ namespace moji
                     var requestContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
                     requestContent.Headers.ContentType.CharSet = "UTF-8";
 
-
-
-                    // 记录 CURL 命令
-                    _logger.Information("发送请求\nCURL Command:\n{CurlCommand}", 
-                        GenerateCurlCommand(url, client.DefaultRequestHeaders, jsonContent));
-
                     var response = await client.PostAsync(url, requestContent, cancellationToken);
                     var responseContent = await response.Content.ReadAsStringAsync(cancellationToken);
-
-                    // 记录响应详情
-                    _logger.Information("收到响应\n状态码: {StatusCode}\n响应内容: {Response}", 
-                        response.StatusCode, responseContent);
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -612,20 +586,7 @@ namespace moji
                     new Run($"发送请求时发生错误: {ex.Message}")
                 ));
                 UpdateResultTextBox(errorDoc, targetTextBox);
-                _logger.Error(ex, "发送请求时发生错误");
             }
-        }
-
-        private string GenerateCurlCommand(string url, HttpHeaders headers, string jsonContent)
-        {
-            var curlCommand = $"curl '{url}' \\\n";
-            foreach (var header in headers)
-            {
-                curlCommand += $"  -H '{header.Key}: {string.Join(", ", header.Value)}' \\\n";
-            }
-            curlCommand += $"  -H 'content-type: application/json;charset=UTF-8' \\\n";
-            curlCommand += $"  --data-raw '{jsonContent}'";
-            return curlCommand;
         }
 
         private void UpdateResultTextBox(FlowDocument flowDoc, WpfRichTextBox textBox)
