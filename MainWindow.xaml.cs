@@ -24,6 +24,7 @@ using WpfApplication = System.Windows.Application;
 using System.Collections.Generic;  // 添加 Dictionary 支持
 using Serilog;
 using DotNetEnv; // 添加这行
+using moji.Services;  // 添加这行
 using MediaColorConverter = System.Windows.Media.ColorConverter;  // 添加在 using 区域
 using WpfRichTextBox = System.Windows.Controls.RichTextBox;  // 添加这行
 using WpfTabControl = System.Windows.Controls.TabControl;    // 添加这行
@@ -101,6 +102,9 @@ namespace moji
         private const string DEEPL_API_URL = "https://api-free.deepl.com/v2/translate";
         private string DEEPL_API_KEY => Env.GetString("DEEPL_API_KEY");
 
+        // 添加数据库服务字段
+        private readonly DatabaseService _databaseService;
+
         public MainWindow()
         {
             _cachedSearchText = string.Empty;
@@ -140,6 +144,9 @@ namespace moji
                 _logger = Log.Logger;
                 _logger.Information("应用程序启动");
 
+                // 初始化数据库服务
+                _databaseService = new DatabaseService(_logger);
+
                 // 添加标签页切换事件处理
                 TabControl.SelectionChanged += TabControl_SelectionChanged;
             }
@@ -155,7 +162,7 @@ namespace moji
             base.OnSourceInitialized(e);
             this.ShowInTaskbar = false; // 在任务栏不显示图标
             
-            // 确保先注销已存在的热键
+            // 确保��注销已存在的热键
             var helper = new WindowInteropHelper(this);
             UnregisterHotKey(helper.Handle, HOTKEY_ID);
             
@@ -410,7 +417,7 @@ namespace moji
                 else
                 {
                     // 为每个文本框创建新的实例
-                    var noContentDoc1 = new FlowDocument(new Paragraph(new Run("剪切板没有文本内容")));
+                    var noContentDoc1 = new FlowDocument(new Paragraph(new Run("剪切板没有文本内���")));
                     var noContentDoc2 = new FlowDocument(new Paragraph(new Run("剪切板没有文本内容")));
                     VocabularyTextBox.Document = noContentDoc1;
                     ExamplesTextBox.Document = noContentDoc2;
@@ -457,10 +464,23 @@ namespace moji
                 }
 
                 var jsonResponse = System.Text.Json.JsonDocument.Parse(responseContent);
-                return jsonResponse.RootElement
+                var translatedText = jsonResponse.RootElement
                     .GetProperty("translations")[0]
                     .GetProperty("text")
                     .GetString();
+
+                // 保存翻译记录到数据库
+                try
+                {
+                    await _databaseService.SaveTranslationAsync(text, translatedText);
+                }
+                catch (Exception ex)
+                {
+                    _logger.Error(ex, "保存翻译记录失败");
+                    // 不抛出异常，继续返回翻译结果
+                }
+
+                return translatedText;
             }
         }
 
